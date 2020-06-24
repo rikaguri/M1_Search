@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/A3XD(RFM).iml" filepath="$PROJECT_DIR$/.idea/modules/A3XD(RFM).iml" group="A3XD(RFM)" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="A3XD(RFM)/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk-release/sdk-release.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk-release/sdk-release.iml" group="A3XD(RFM)/sdk-release" />
+    </modules>
+  </component>
+</project>

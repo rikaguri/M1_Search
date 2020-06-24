@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_setting_tab1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/nav_bg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/onoff_setting_navigation_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/nav_btn_back_bg"
+            android:contentDescription="@null"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="-20dp"
+            android:text="More"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#007AFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:shadowColor="#80000000"
+            android:shadowDy="-1.0"
+            android:shadowRadius="1.0"
+            android:text="Reader setting OnOff "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Beep(On/Off)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/sw_beep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/toggle_switch"
+                    android:text=""
+                    android:textOff=" "
+                    android:textOn=" " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Vibration(On/Off)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/sw_vibration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/toggle_switch"
+                    android:text=""
+                    android:textOff=" "
+                    android:textOn=" " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="LED(On/Off)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/sw_led"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/toggle_switch"
+                    android:text=""
+                    android:textOff=" "
+                    android:textOn=" " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Ilumination(Only Barcode)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/sw_illumination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/toggle_switch"
+                    android:text=""
+                    android:textOff=" "
+                    android:textOn=" " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Power on Beep"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/sw_power_on_beep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/toggle_switch"
+                    android:text=""
+                    android:textOff=" "
+                    android:textOn=" " />
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

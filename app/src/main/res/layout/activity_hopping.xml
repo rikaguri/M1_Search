@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_setting_tab1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/nav_bg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/popsetting_navigation_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/nav_btn_back_bg"
+            android:contentDescription="@null"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="onClickevent"
+            android:paddingLeft="-20dp"
+            android:singleLine="true"
+            android:text="More"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#007AFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:shadowColor="#80000000"
+            android:shadowDy="-1.0"
+            android:shadowRadius="1.0"
+            android:text="Settings"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_getInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:onClick="onClickevent"
+        android:singleLine="true"
+        android:text="Refresh Info " />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_hopping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_green_light"
+                    android:maxLines="20"
+                    android:text=""
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="false"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Rebuild optimized channel table"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_optimum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                     android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:onClick="onClickevent"
+                    android:singleLine="true"
+                    android:text="  Set  " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="false"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Smart On/Off"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/btn_smart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/btn_setSmart"
+                    android:background="@drawable/toggle_switch"
+                    android:onClick="onClickevent"
+                    android:text=""
+                    android:textOff=" "
+                    android:textOn=" " />
+
+                <Button
+                    android:id="@+id/btn_setSmart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:onClick="onClickevent"
+                    android:singleLine="true"
+                    android:text="  Set  " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-1dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/txt_hopping_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="false"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="FH Mode"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <com.asreader.component.SegmentedRadioGroup
+                    android:id="@+id/segment_hoppingSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@+id/txt_hopping_temp"
+                    android:checkedButton="@+id/btn_que"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/segment_FH"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="   FH   "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/segment_radio_text_colors" />
+
+                    <RadioButton
+                        android:id="@+id/segment_LBT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="   LBT   "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/segment_radio_text_colors" />
+
+                    <RadioButton
+                        android:id="@+id/segment_AllOff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="   OFF   "
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/segment_radio_text_colors" />
+                </com.asreader.component.SegmentedRadioGroup>
+
+                <Button
+                    android:id="@+id/btn_setHoppingMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:onClick="onClickevent"
+                    android:singleLine="true"
+                    android:text="  Set  " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_channel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:background="@drawable/listview_bg"
+                android:minHeight="40dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/txt_channel_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="false"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Channel"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_toRightOf="@+id/txt_channel_temp"
+                    android:id="@+id/edit_channel"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="0" />
+
+                    <Button
+                        android:id="@+id/btn_channel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:onClick="onClickevent"
+                        android:singleLine="true"
+                        android:text="  Set  " />
+               
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_saveData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickevent"
+                android:singleLine="true"
+                android:text="Update registery " />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
