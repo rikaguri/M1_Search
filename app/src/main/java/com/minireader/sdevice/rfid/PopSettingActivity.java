@@ -184,10 +184,7 @@ public class PopSettingActivity extends Activity implements IOnAsDeviceRfidEvent
 			{
 				boolean rssi = false;
 				ToggleButton rssiSet = (ToggleButton) findViewById(R.id.appsetting_rssi);
-				if(rssiSet.isChecked())
-					rssi = true;
-				else
-					rssi = false;
+				rssi = rssiSet.isChecked();
 				SharedPreferences prefs = PreferenceManager
 						.getDefaultSharedPreferences(PopSettingActivity.this);
 				SharedPreferences.Editor editor = prefs.edit();

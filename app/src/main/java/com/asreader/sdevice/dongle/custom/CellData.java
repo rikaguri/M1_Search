@@ -6,6 +6,8 @@ public class CellData
 	String value;
 	String rssi;
 	String rfm;
+	String time;
+
 	public CellData()
 	{
 
@@ -37,6 +39,8 @@ public class CellData
 	{
 		this.rfm = rfm;
 	}
+
+	public String getTime(){return time;}
 
 
 	public void setImage()

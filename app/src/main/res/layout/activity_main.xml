@@ -21,7 +21,7 @@
             android:layout_marginStart="15dp"
             android:background="@drawable/log_otg"
             android:gravity="center_vertical|center_horizontal"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:contentDescription="@string/todo" />
 
         <ImageView
@@ -47,7 +47,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#000000"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/txt_sub_title"
@@ -62,7 +63,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#000000"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/option"
@@ -98,7 +100,8 @@
             android:gravity="center"
             android:text="@string/_0_tags"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/aboutvalue"
@@ -189,7 +192,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/sensor_read"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="invisible"/>
 
             <Button
                 android:id="@+id/btn_ext_rfm"
@@ -202,7 +206,8 @@
                 android:background="@drawable/btn_click"
                 android:text="@string/rfm"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@drawable/nav_btn_text_colors" />
+                android:textColor="@drawable/nav_btn_text_colors"
+                android:visibility="invisible"/>
 
             <Button
                 android:id="@+id/btn_battery"
@@ -215,7 +220,8 @@
                 android:background="@drawable/btn_click"
                 android:text="@string/battery"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@drawable/nav_btn_text_colors_battery" />
+                android:textColor="@drawable/nav_btn_text_colors_battery"
+                android:visibility="invisible"/>
         </LinearLayout>
 
 

@@ -51,6 +51,7 @@ public class CustomTagAdapter extends ArrayAdapter<CellData>
 	    cTextView.setText(cell.getValue());
 	    rssiTextView.setText(cell.getRssi());
 	    rssiTextView.setText(cell.getRFM());
+
 	}
 
 	return convertView;

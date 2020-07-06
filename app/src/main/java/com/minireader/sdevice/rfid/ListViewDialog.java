@@ -214,6 +214,6 @@ public class ListViewDialog extends Dialog
 	 */
 	public interface ListViewDialogSelectListener
 	{
-		public void onSetOnItemClickListener(int position);
+		void onSetOnItemClickListener(int position);
 	}
 }

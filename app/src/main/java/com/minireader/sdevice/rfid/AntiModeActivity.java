@@ -80,7 +80,7 @@ public class AntiModeActivity extends Activity implements IOnAsDeviceRfidEvent,O
 		array_list = new ArrayList<String>();
 		for (int i = 0; i < 4; i++)
 		{
-			array_list.add("Mode"+Integer.toString(i));
+			array_list.add("Mode"+ i);
 		}
 
 		adapter = new ArrayAdapter<String>(this, R.layout.cell_setting_check,array_list);

@@ -1,5 +1,14 @@
 package com.minireader.sdevice.rfid;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -10,9 +19,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -42,14 +53,14 @@ import com.asreader.util.Utils;
 import com.asreader.utility.EpcConverter;
 import com.asreader.utility.Logger;
 
-public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEvent,IOnOtgEvent
-{
+public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEvent,IOnOtgEvent {
+
 	private final String TAG = "MainActivity";
 	private final int df_NOT_INVALID_RSSI = 10;
-	private final String df_NOT_INVALID_RFM  = "nRFM";
+	private final String df_NOT_INVALID_RFM = "nRFM";
 	private int encoding_type = EpcConverter.HEX_STRING;
-	private int max_tag      = 0;//maximum number of tags to read
-	private int max_time     = 0;//maximum elapsed time to read tags(sec)
+	private int max_tag = 0;//maximum number of tags to read
+	private int max_time = 0;//maximum elapsed time to read tags(sec)
 	private int repeat_cycle = 0;//how many times reader performs inventory round
 
 
@@ -57,10 +68,10 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	private ListView epclist_empty;
 	private TextView tvTagCount, tvDeviceStatus, tvBattery;
 
-	private ArrayList<CellData>   tagCellList   = new ArrayList<CellData>();
-	private ArrayList<String>     tagStringList = new ArrayList<String>();
-	private ArrayList<CellData>   tagArrayEmpty = new ArrayList<CellData>();
-	private ArrayList<TagData>    tagDataList   = new ArrayList<TagData>();
+	private ArrayList<CellData> tagCellList = new ArrayList<>();
+	private ArrayList<String> tagStringList = new ArrayList<>();
+	private ArrayList<CellData> tagArrayEmpty = new ArrayList<>();
+	private ArrayList<MainActivity.TagData> tagDataList = new ArrayList<>();
 
 
 	private CustomTagAdapter tagAdaterEmpty;
@@ -70,20 +81,33 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	private SharedPreferences mPrefs = null;
 
-	private ScreenOnReceiver screenOnReceiver =null;
+	private MainActivity.ScreenOnReceiver screenOnReceiver = null;
 
 	ToggleButton setPower;
 
-	Button option ,clearScreen, stopAutoRead, btn_ext_read, btn_ext_rfm, btn_battery;
+	Button option, clearScreen, stopAutoRead, btn_ext_read, btn_ext_rfm, btn_battery;
+
+	//タグのデータをcsvに格納するためのデータ
+	public ArrayList<MainActivity.MyTagData> myTagDataArrayList = new ArrayList<>();
+	//csvファイルのためのもの
+	FileWriter fileWriter;
+	PrintWriter printWriter;
+	private Integer pastTime = null;//時間保存用
 
 
-
-	public class TagData
-	{
+	public class TagData {
 		public int[] mData;
 		public int m_nCount;
 		public String m_strData;
+		//public String m_Time;
 	}
+
+	//物探し用のクラス
+	public class MyTagData {
+		public String data;
+		public int rssi;
+	}
+
 
 	class ScreenOnReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
@@ -111,21 +135,27 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	}
 
 
-	//Activityの初期化
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
 		option       = (Button) findViewById(R.id.option);
+		//option.setVisibility(View.INVISIBLE);
 		clearScreen  = (Button) findViewById(R.id.btn_clear);
+		//clearScreen.setVisibility(View.INVISIBLE);
 		stopAutoRead = (Button) findViewById(R.id.btn_stop);
+		//stopAutoRead.setVisibility(View.INVISIBLE);
 		epclist        = (ListView) findViewById(R.id.tag_list);
+		//epclist.setVisibility(View.INVISIBLE);
 		tvTagCount     = (TextView) findViewById(R.id.name);
+		//tvTagCount.setVisibility(View.INVISIBLE);
 		tvDeviceStatus = (TextView) findViewById(R.id.aboutvalue);
+		//tvDeviceStatus.setVisibility(View.INVISIBLE);
 		tvBattery      = (TextView) findViewById(R.id.textView3);
+		//tvBattery.setVisibility(View.INVISIBLE);
 
 		// Read Tag List View event
 		tagAdapter     = new CustomTagAdapter(this,R.layout.cell_tag, tagCellList);
@@ -145,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 		// RFM Button (Sensor Tag)
 		btn_ext_rfm = (Button) findViewById(R.id.btn_ext_rfm);
-		btn_ext_rfm.setOnClickListener(new OnClickListener() {
+		btn_ext_rfm.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				buttonControl(2);
@@ -156,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 		// Battery
 		btn_battery  = (Button) findViewById(R.id.btn_battery);
-		btn_battery.setOnClickListener(new OnClickListener() {
+		btn_battery.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				AsDeviceMngr.getInstance().getOTG().getBattery();
@@ -166,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 		//Read Tag Button
 		btn_ext_read = (Button) findViewById(R.id.btn_ext_read);
-		btn_ext_read.setOnClickListener(new OnClickListener()
+		btn_ext_read.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
@@ -181,20 +211,32 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 		// Stop button
 		stopAutoRead = (Button) findViewById(R.id.btn_stop);
-		stopAutoRead.setOnClickListener(new OnClickListener()
+		stopAutoRead.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
 			{
 				buttonControl(0);
+
+				//csvに書き込み
+				for(int i =0;i<myTagDataArrayList.size();i++){
+					printWriter.print("");//すでに改行されているRSSIのデータ
+					printWriter.println();//改行
+					printWriter.print("");//すでに改行されているRSSIのデータ
+					printWriter.println();//改行
+
+				}
+				//閉じる
+				printWriter.close();
 				AsDeviceMngr.getInstance().getOTG().stopReadTags();
 			}
 		});
+
 		stopAutoRead.setEnabled(false);
 
 		// Clear button
 		clearScreen = (Button) findViewById(R.id.btn_clear);
-		clearScreen.setOnClickListener(new OnClickListener()
+		clearScreen.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
@@ -206,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 		// More Button
 		option = (Button) findViewById(R.id.option);
-		option.setOnClickListener(new OnClickListener()
+		option.setOnClickListener(new View.OnClickListener()
 		{
 
 			@Override
@@ -236,7 +278,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 
 		setPower = (ToggleButton) findViewById(R.id.power_onoff);
-		setPower.setOnClickListener(new OnClickListener()
+		setPower.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
@@ -253,6 +295,16 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 		});
 
 
+		//CSVに保存するための出力ファイルの作成
+		try {
+			fileWriter =fileWriter = new FileWriter("test.csv",false);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		printWriter = new PrintWriter(new BufferedWriter(fileWriter));
+
+
+
 		initial();
 
 		/* SDK , APP Info */
@@ -261,7 +313,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 
 		TextView txtSubTitle  = (TextView) findViewById(R.id.txt_sub_title);
-		txtSubTitle.setText("APP: "+Utils.getInstance().getAppVersion(this)+" SDK: "+AsDeviceConst.strLibVersion);
+		txtSubTitle.setText("APP: "+ Utils.getInstance().getAppVersion(this)+" SDK: "+ AsDeviceConst.strLibVersion);
 		regScreeOffEvent();
 
 		/*Enable save Log file  */
@@ -270,35 +322,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 		/* type : 0 RX 1: TX 2: Event */
 		Logger.getInstance().addLogData(2,"Start Log : onCreate");
-
-
-		//以下にBottomNavigationViewのコード
-		BottomNavigationView bottom_navigation=(BottomNavigationView)findViewById(R.id.bottom);//下部分のナビゲーション作成
-		BottomNavigationView.OnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
-
-		@Override
-		public boolean onNavigationItemSelected(@NonNull MenuItem item){
-			Fragment selectedFragment =null;
-			switch (item.getItemId()) {
-				case R.id.item1:
-					selectedFragment = ItemOneFragment.newInstance();
-					break;
-				case R.id.item2:
-					selectedFragment = ItemTwoFragment.newInstance();
-					break;
-				case R.id.item3:
-					selectedFragment = ItemThreeFragment.newInstance();
-					break;
-			}
-			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-			//transaction.replace();
-			transaction.commit();
-			return true;
-		}
-	});
 	}
-
-
 
 	/* Initial required declaration when using OTG and RFID events. */
 	private void initial()
@@ -339,6 +363,8 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 		return i;
 	}
 
+	//ListDataの値をクリアする関数
+	//排他制御
 	synchronized private void ListClear()
 	{
 		tagCellList.clear();
@@ -437,6 +463,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	}
 
 
+	//Another activity comes into foreground
 	@Override
 	protected void onStop()
 	{
@@ -445,12 +472,14 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 				R.anim.slide_out_left1);
 	}
 
+	//The activity is no longer visible
 	@Override
 	protected void onPause()
 	{
 		super.onPause();
 	}
 
+	//画面の向きを動的に生成する
 	@Override
 	public void setRequestedOrientation(int requestedOrientation)
 	{
@@ -509,11 +538,13 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	}
 
+	//リーダーのイベント
 	@Override
 	public void onReaderAboutInfo(String s, String s1, String s2, byte b) {
 
 	}
 
+	//リセットを受け取った時のイベント
 	@Override
 	public void onResetReceived()
 	{
@@ -521,6 +552,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	}
 
 
+	//バッテリーのステータスを受け取った時のイベント
 	@Override
 	public void onBatteryStateReceived(final int dest ,final int nCharging)
 	{
@@ -635,7 +667,6 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	}
 
 
-
 	@Override
 	public void onSessionReceived(int session)
 	{
@@ -643,21 +674,23 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	}
 
-
-
-	synchronized private void ListRefresh(final int[] tagData, final float fRSSI, final String temp)
+	//タグが読み取れた時にリストが更新されるところ
+	//排他制御している
+	synchronized private void ListRefresh(final int[] tagData, final float fRSSI, final String temp,final Integer time)
 	{
 		Utils.getInstance().playSound(this);
 		runOnUiThread(new Runnable()
 		{
 			public void run()
 			{
+				//得られたデータをString型に変換
 				String strTag = ""+EpcConverter.toString(encoding_type, tagData);
+				//strTagに何が入っているかをToastで見てみる
 
 				Log.i("ListRefresh > ", temp + "");
 
-				boolean newTagReceived = true;
-				boolean newItemReceived = true;
+				boolean newTagReceived = true;//新しいタグが得られたかどうかのフラグ
+				boolean newItemReceived = true;//新しいアイテムが得られたかどうかのフラグ
 				int index;
 
 				for (index = 0; index < tagDataList.size(); index++)
@@ -703,8 +736,8 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 						|| (encoding_type == EpcConverter.EAN13 && newTagReceived && newItemReceived) )
 				{
 
-					final CellData ttag = new CellData();
-					ttag.setName(strTag);
+					final CellData ttag = new CellData();//CellData型の変数を準備
+					ttag.setName(strTag);//変数に名前をつける
 
 
 					if (fRSSI<0 && temp.equals(df_NOT_INVALID_RFM)){
@@ -753,7 +786,28 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 				}
 
+				//ここから物探しの時の処理を行う
+				//物探しの時に使用する変数
+
+
+				if(pastTime == null){//そもそも前のスキャンがなかった時
+					//そのタグをlistに追加
+
+
+				}
+				//前のスキャンとの時間差が100ms以下だった場合
+				else if(pastTime-time <= 100){
+
+				}
+
+				//別スキャンの場合
+				else{
+
+				}
+
+
 			}
+
 		});
 	}
 
@@ -878,7 +932,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	public void setItemClickListener(boolean power){
 		if(power){
-			epclist.setOnItemClickListener(new OnItemClickListener()
+			epclist.setOnItemClickListener(new AdapterView.OnItemClickListener()
 			{
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)
@@ -956,10 +1010,19 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	}
 
 
+	//タグが読み取れた時(RSSIがない時)に発生するイベント
 	@Override
 	public void onTagReceived(int[] dest) {
 		// TODO Auto-generated method stub
-		ListRefresh(dest,df_NOT_INVALID_RSSI,df_NOT_INVALID_RFM);
+		//現在時刻を取得
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		//ミリ秒部分だけ出力
+		SimpleDateFormat sdf = new SimpleDateFormat("SSS");
+		//string型にする
+		String strtmp = sdf.format(timestamp);
+		//int型にする
+		Integer time = Integer.parseInt(strtmp);
+		ListRefresh(dest,df_NOT_INVALID_RSSI,df_NOT_INVALID_RFM,time);
 	}
 
 
@@ -970,15 +1033,38 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	}
 
 
+	//rssiがついたタグが読み取れた時発生するイベント
 	@Override
 	public void onTagWithRssiReceived(int[] pcEpc, int rssi) {
 		// TODO Auto-generated method stub
-		ListRefresh(pcEpc,rssi,df_NOT_INVALID_RFM);
+		//現在時刻を取得
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		//ミリ秒部分だけ出力
+		SimpleDateFormat sdf = new SimpleDateFormat("SSS");
+		//string型にする
+		String strtmp = sdf.format(timestamp);
+		//int型にする
+		Integer time = Integer.parseInt(strtmp);
+
+		//List<String> list = Arrays.asList(pcEpc);
+
+		//listRefreshにデータを送る
+		ListRefresh(pcEpc,rssi,df_NOT_INVALID_RFM,time);
 	}
 
 
+	//RSSIがないものを読み取った時に時に発生するイベント
 	@Override
 	public void onPcEpcSensorDataReceived(final int[] pcEpc,final int[] sensorData) {  // RFM
+		//現在時刻を取得
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		//ミリ秒部分だけ出力
+		SimpleDateFormat sdf = new SimpleDateFormat("SSS");
+		//string型にする
+		String strtmp = sdf.format(timestamp);
+		//int型にする
+		Integer time = Integer.parseInt(strtmp);
+
 		if(SensorTag.getInstance().parseSensorData(sensorData))
 		{
 			//Success parse sensor data
@@ -991,16 +1077,58 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 					+ "CT  : "+SensorTag.getInstance().sensorCt
 					+" temp: "+sensorValues);
 
-			ListRefresh(pcEpc, df_NOT_INVALID_RSSI, sensorValues);
+			ListRefresh(pcEpc, df_NOT_INVALID_RSSI, sensorValues,time);
 		}
 		else
 		{
 			//fail parse sensor data
-			ListRefresh(pcEpc, df_NOT_INVALID_RSSI, "Unknown SensorTAG");
+			ListRefresh(pcEpc, df_NOT_INVALID_RSSI, "Unknown SensorTAG",time);
 		}
 	}
 
 
+
+	/*//Activityの初期化
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		//Fragmentを作成
+		MainFragment fragment = new MainFragment();
+		// Fragmentの追加や削除といった変更を行う際は、Transactionを利用します
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		// 新しく追加を行うのでaddを使用します
+		// 他にも、よく使う操作で、replace removeといったメソッドがあります
+		// メソッドの1つ目の引数は対象のViewGroupのID、2つ目の引数は追加するfragment
+		transaction.add(R.id.container, fragment);
+		// 最後にcommitを使用することで変更を反映します
+		transaction.commit();
+
+
+		//以下にBottomNavigationViewのコード
+		BottomNavigationView bottom_navigation = (BottomNavigationView) findViewById(R.id.bottom);//下部分のナビゲーション作成
+		BottomNavigationView.OnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+			@Override
+			public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+				Fragment selectedFragment = null;
+				switch (item.getItemId()) {
+					case R.id.item1:
+						selectedFragment = ItemOneFragment.newInstance();
+						break;
+					case R.id.item2:
+						selectedFragment = ItemTwoFragment.newInstance();
+						break;
+					case R.id.item3:
+						selectedFragment = ItemThreeFragment.newInstance();
+						break;
+				}
+				FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+				//transaction.replace();
+				transaction.commit();
+				return true;
+			}
+		});
+	}*/
 }
+
 
 

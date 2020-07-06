@@ -37,7 +37,7 @@ public class SessionActivity extends Activity implements IOnAsDeviceRfidEvent
 
 		for (int i = 0; i < 4; i++)
 		{
-			array_list.add("S"+Integer.toString(i));
+			array_list.add("S"+ i);
 		}
 
 		adapter = new ArrayAdapter<String>(this, R.layout.cell_setting_check,array_list);

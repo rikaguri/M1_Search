@@ -30,5 +30,6 @@
 	<string name="more">More</string>
 	<string name="_0_tags">0 tags</string>
 	<string name="unplugged">Unplugged</string>
-	<string name="todo">TODO</string>
+    <string name="dist">dist</string>
+    <string name="finishSearch">探し物発見</string>
 </resources>

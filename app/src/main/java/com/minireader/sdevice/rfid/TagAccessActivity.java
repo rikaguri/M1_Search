@@ -85,7 +85,8 @@ public class TagAccessActivity extends Activity
 	    }	    
 	});
     }
-    
+
+    //受け取ったEPCを分割する
     public String splitEpc(String pcXpcEpc)
     {
 	if((Byte.parseByte(pcXpcEpc.substring(0, 2), 16) & 0x02) == 0x02)	// check the XI bit on the PC

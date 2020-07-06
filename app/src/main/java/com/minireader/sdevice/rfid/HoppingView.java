@@ -459,10 +459,7 @@ public class HoppingView extends Activity implements  IOnAsDeviceRfidEvent,IOnHa
 	@Override
 	public void onReceiveSmartMode(int state) {
 		// TODO Auto-generated method stub
-		if(state ==0)
-			bSamrtMode = false;
-		else
-			bSamrtMode = true;	
+		bSamrtMode = state != 0;
 
 
 		if(bSamrtMode)
