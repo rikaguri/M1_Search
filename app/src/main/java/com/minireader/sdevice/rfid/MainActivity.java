@@ -1,31 +1,22 @@
 package com.minireader.sdevice.rfid;
 import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -46,21 +37,23 @@ import com.asreader.event.IOnAsDeviceRfidEvent;
 import com.asreader.event.IOnOtgEvent;
 import com.asreader.sdevice.AsDeviceLib;
 import com.asreader.sdevice.AsDeviceMngr;
-import com.asreader.sdevice.AsDeviceRfid;
 import com.asreader.sdevice.dongle.custom.*;
 import com.asreader.util.SensorTag;
 import com.asreader.util.Utils;
 import com.asreader.utility.EpcConverter;
 import com.asreader.utility.Logger;
 
-public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEvent,IOnOtgEvent {
+import static java.lang.Math.abs;
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOtgEvent, SensorEventListener {
 
 	private final String TAG = "MainActivity";
 	private final int df_NOT_INVALID_RSSI = 10;
 	private final String df_NOT_INVALID_RFM = "nRFM";
 	private int encoding_type = EpcConverter.HEX_STRING;
-	private int max_tag = 0;//maximum number of tags to read
-	private int max_time = 0;//maximum elapsed time to read tags(sec)
+	private int max_tag = 40;//maximum number of tags to read
+	private int max_time = 10;//maximum elapsed time to read tags(sec)
 	private int repeat_cycle = 0;//how many times reader performs inventory round
 
 
@@ -89,11 +82,50 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	//タグのデータをcsvに格納するためのデータ
 	public ArrayList<MainActivity.MyTagData> myTagDataArrayList = new ArrayList<>();
-	//csvファイルのためのもの
-	FileWriter fileWriter;
-	PrintWriter printWriter;
-	private Integer pastTime = null;//時間保存用
+	private String finCalData="";
+	private String finSaveData="";
+	private String tempData="";
+	private String tempRSSI="";
+	private Integer pastTime = 0;//時間保存用
+	private BufferedWriter bw;
+	private Integer countTagReadRssi =0;
+	//private ArrayList<MainActivity.MyTagData> tempDataList = new ArrayList<>();//一時保存用
+	//private ArrayList<MainActivity.MyTagData> finDataList = new ArrayList<>();//書き込み前保存用
 
+	//POST通信用データ
+	private  UploadTask task;
+	private  UploadTask task2;
+	//String url=;//PHPがPOSTで受け取ったwordを入れて作成するHTMLページ
+
+
+	//方向推定用
+	final static float PI = (float)Math.PI;
+
+	private SensorManager sensorManager;
+	Sensor aSensor;  // 加速度センサ TYPE_LINEAR_ACCELERATION
+	Sensor grSensor; //重力センサ TYPE_GRAVITY
+	Sensor gSensor; // ジャイロセンサ TYPE_GYROSCOPE
+	Sensor mSensor; //地磁気センサ TYPE_MAGNETIC_FIELD
+	Sensor oSensor; //方位センサ TYPE_ORIENTATION
+	private TextView azimuth, moveTextx, moveTexty, moveTextz;
+
+	//移動方向推定
+	private float[] accelValue = new float[3];  //加速度
+	private float[] gravity = new float[3];    //重力
+	private float[] north = new float[3];       //N軸
+	private float[] east = new float[3];        //E軸
+	//GNE軸への射影成分
+	private float[] gneAccel = new float[3];
+	private float oriantation = 0; //方位角（degree）
+	private float orientationRad = 0;   //方位角（rad）
+	//移動方向推定
+	private long lastAccelTime = 0;
+	private float[] speed = new float[3];   //速度
+	private float[] difference = new float[3];  //変位
+	private boolean diffFlag = true;
+
+	private Button button;
+	boolean check = false;
 
 	public class TagData {
 		public int[] mData;
@@ -104,8 +136,84 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	//物探し用のクラス
 	public class MyTagData {
+		public Integer time;
 		public String data;
-		public int rssi;
+		public float rssi;
+	}
+
+	//センサー値の変化があったときのevent
+	@Override
+	public void onSensorChanged(SensorEvent event) {
+		int i = 0;
+
+		switch (event.sensor.getType()){
+
+			case Sensor.TYPE_LINEAR_ACCELERATION:   //重力を除く加速度m/s^2
+
+				accelValue = event.values.clone();
+
+				if(abs(gravity[2]) < 0.5){
+					//スマホが垂直な時は方向算出しない
+					//diffFlag = false;
+					//azimuth.setText("gravity[2] < 0.5");
+					//リセット
+					lastAccelTime = 0;
+					for (i = 0; i < 3; i++){
+						speed[i] = 0;
+						difference[i] = 0;
+					}
+				}
+
+
+				if(check && abs(accelValue[0]) > 0.05 || abs(accelValue[1]) > 0.05 || abs(accelValue[2]) > 0.05) {
+					//if(check){
+
+					//moveTextx.setText("accelValue[0]:" + String.valueOf(accelValue[0]));
+					//moveTexty.setText("accelValue[1]:" + String.valueOf(accelValue[1]));
+					//moveTextz.setText("accelValue[2]:" + String.valueOf(accelValue[2]));
+
+					//各軸の加速度を2重積分
+					long dt = event.timestamp - lastAccelTime;    //dt(nanosec)
+					if (lastAccelTime > 0) {
+						//GNE軸に変換
+						gneAccel[0] = east[0] * accelValue[0] + east[1] * accelValue[1] + east[2] * accelValue[2];
+						gneAccel[1] = north[0] * accelValue[0] + north[1] * accelValue[1] + north[2] * accelValue[2];
+						gneAccel[2] = gravity[0] * accelValue[0] + gravity[1] * accelValue[1] + gravity[2] * accelValue[2];
+
+						for (i = 0; i < 3; i++) {
+							if (abs(gneAccel[i]) > 0.5) {
+								//速度（cm/s）
+								speed[i] += gneAccel[i] * dt / 10000000.0;
+								//距離（cm）
+								difference[i] += speed[i] * dt / 1000000000.0;
+							}
+						}
+					}
+					lastAccelTime = event.timestamp;
+				}
+				break;
+
+
+			case Sensor.TYPE_ORIENTATION:
+				oriantation = event.values[0];
+				//azimuth.setText("方位:" + String.valueOf(oriantation));
+				break;
+
+
+			case Sensor.TYPE_GRAVITY:   //重力を取得
+				gravity = event.values.clone();
+				gravity = unit(gravity);    //正規化
+				break;
+
+
+			default:
+				return;
+		}
+	}
+
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
 	}
 
 
@@ -137,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		//Log.d("o","ルートディレクトリ？"+);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
@@ -202,8 +311,10 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 			public void onClick(View v)
 			{
 				buttonControl(1);
-				boolean rssiOn = prefs.getBoolean("DISPLAY_RSSI", false);
+				boolean rssiOn = prefs.getBoolean("DISPLAY_RSSI", true);
+				check=true;
 				AsDeviceMngr.getInstance().getOTG().startReadTags(max_tag, max_time, repeat_cycle,rssiOn);
+
 			}
 		});
 		btn_ext_read.setEnabled(false);
@@ -213,24 +324,64 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 		stopAutoRead = (Button) findViewById(R.id.btn_stop);
 		stopAutoRead.setOnClickListener(new View.OnClickListener()
 		{
+			@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 			@Override
 			public void onClick(View v)
 			{
 				buttonControl(0);
-
-				//csvに書き込み
-				for(int i =0;i<myTagDataArrayList.size();i++){
-					printWriter.print("");//すでに改行されているRSSIのデータ
-					printWriter.println();//改行
-					printWriter.print("");//すでに改行されているRSSIのデータ
-					printWriter.println();//改行
-
-				}
-				//閉じる
-				printWriter.close();
+				check=false;
 				AsDeviceMngr.getInstance().getOTG().stopReadTags();
+				File path = getExternalFilesDir(null);
+				String testfile ="calc.csv";
+				File file = new File(path, testfile);
+				try {
+					FileOutputStream outputStream = new FileOutputStream(file, true);
+					OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, UTF_8);
+					//outputStream.write(finData.getBytes());
+					//outputStream.close();
+					bw = new BufferedWriter(outputStreamWriter);
+					bw.write(finCalData);
+					bw.flush();
+					bw.close();
+					ShowToast("STOP"+ finCalData);
+				}catch(Exception e){
+					e.printStackTrace();
+					ShowToast("NG"+ finCalData);
+				}
+
+				File path2 = getExternalFilesDir(null);
+				String testfile2 ="save.csv";
+				File file2 = new File(path2, testfile2);
+				try {
+					FileOutputStream outputStream2 = new FileOutputStream(file2, true);
+					OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(outputStream2, UTF_8);
+					//outputStream.write(finData.getBytes());
+					//outputStream.close();
+					BufferedWriter bw = new BufferedWriter(outputStreamWriter2);
+					bw.write(finSaveData);
+					bw.flush();
+					bw.close();
+					ShowToast("STOP"+ finSaveData);
+				}catch(Exception e){
+					e.printStackTrace();
+					ShowToast("NG"+ finSaveData);
+				}
+
+
+				/*task = new UploadTask();
+				task.setListener(createListener());
+				task.execute(finCalData);*/
+				task2 =new UploadTask();
+				task2.setListener(createListener());
+				task2.execute(finSaveData);
+
+
+				finCalData =null;
+				finSaveData=null;
 			}
 		});
+
+
 
 		stopAutoRead.setEnabled(false);
 
@@ -294,16 +445,15 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 			}
 		});
 
-
-		//CSVに保存するための出力ファイルの作成
-		try {
-			fileWriter =fileWriter = new FileWriter("test.csv",false);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		printWriter = new PrintWriter(new BufferedWriter(fileWriter));
-
-
+		//方位推定用
+		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+		// 標準角加速度を登録
+		// 引数を変えると違う種類のセンサ値を取得
+		aSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+		grSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
+		gSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+		mSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+		oSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 
 		initial();
 
@@ -400,6 +550,15 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 		}
 		buttonsStatusUpdate();
 
+		// registerListener：監視を開始
+		// SENSOR_DELAY_UIを変更すると更新頻度が変わる SENSOR_DELAY_FASTEST:0ms,
+		// SENSOR_DELAY_GAME:20ms, SENSOR_DELAY_UI:60ms, SENSOR_DELAY_NORMAL:200ms
+		sensorManager.registerListener(this, aSensor, SensorManager.SENSOR_DELAY_NORMAL);
+		sensorManager.registerListener(this, grSensor, SensorManager.SENSOR_DELAY_NORMAL);
+		sensorManager.registerListener(this, gSensor, SensorManager.SENSOR_DELAY_NORMAL);
+		sensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+		sensorManager.registerListener(this, oSensor, SensorManager.SENSOR_DELAY_NORMAL);
+
 	}
 
 	// Get Home Button Event
@@ -459,6 +618,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 			}
 		});
+
 		builder.show();
 	}
 
@@ -477,6 +637,8 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	protected void onPause()
 	{
 		super.onPause();
+		// Listenerを解除
+		sensorManager.unregisterListener(this);
 	}
 
 	//画面の向きを動的に生成する
@@ -676,7 +838,7 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 
 	//タグが読み取れた時にリストが更新されるところ
 	//排他制御している
-	synchronized private void ListRefresh(final int[] tagData, final float fRSSI, final String temp,final Integer time)
+	synchronized private void ListRefresh(final int[] tagData, final float fRSSI, final String temp,final int time)
 	{
 		Utils.getInstance().playSound(this);
 		runOnUiThread(new Runnable()
@@ -685,7 +847,8 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 			{
 				//得られたデータをString型に変換
 				String strTag = ""+EpcConverter.toString(encoding_type, tagData);
-				//strTagに何が入っているかをToastで見てみる
+				//Toastで見てみる
+				ShowToast(String.valueOf(fRSSI));
 
 				Log.i("ListRefresh > ", temp + "");
 
@@ -785,26 +948,6 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 					}
 
 				}
-
-				//ここから物探しの時の処理を行う
-				//物探しの時に使用する変数
-
-
-				if(pastTime == null){//そもそも前のスキャンがなかった時
-					//そのタグをlistに追加
-
-
-				}
-				//前のスキャンとの時間差が100ms以下だった場合
-				else if(pastTime-time <= 100){
-
-				}
-
-				//別スキャンの場合
-				else{
-
-				}
-
 
 			}
 
@@ -1016,38 +1159,106 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 		// TODO Auto-generated method stub
 		//現在時刻を取得
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		//ミリ秒部分だけ出力
-		SimpleDateFormat sdf = new SimpleDateFormat("SSS");
-		//string型にする
-		String strtmp = sdf.format(timestamp);
 		//int型にする
-		Integer time = Integer.parseInt(strtmp);
+		int time = (int) System.currentTimeMillis();
+
 		ListRefresh(dest,df_NOT_INVALID_RSSI,df_NOT_INVALID_RFM,time);
 	}
 
 
+
+	//tidが読み読み取れた時に発生するイベント
 	@Override
 	public void onTagWithTidReceived(int[] pcEpc, int[] tid) {
 		// TODO Auto-generated method stub
-
+		//現在時刻を取得
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		//int型にする
+		int time = (int) System.currentTimeMillis();
 	}
+
 
 
 	//rssiがついたタグが読み取れた時発生するイベント
 	@Override
 	public void onTagWithRssiReceived(int[] pcEpc, int rssi) {
 		// TODO Auto-generated method stub
+
+		countTagReadRssi++;
+
 		//現在時刻を取得
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		//ミリ秒部分だけ出力
-		SimpleDateFormat sdf = new SimpleDateFormat("SSS");
-		//string型にする
-		String strtmp = sdf.format(timestamp);
 		//int型にする
-		Integer time = Integer.parseInt(strtmp);
+		int time = (int) System.currentTimeMillis();//currentTimeMIllis()はlong型で時刻を出しているので
+		//引数のpcEPCをStringにする
+		String strTag = ""+EpcConverter.toString(encoding_type, pcEpc);
 
-		//List<String> list = Arrays.asList(pcEpc);
+		if ( countTagReadRssi<=2 || time-pastTime >= 100) {//別スキャンになった時 && 初スキャン,2回目スキャン
+			//デバッグ用
+			//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";
+			if (countTagReadRssi == 1) {//1回目のスキャン(空データなので何もしない)
+				//何もしない
+			}
+			else if (countTagReadRssi >= 2) {//countTagが2以上でfinに値が入っている時
+				if (countTagReadRssi != 2) {//2以外の時の処理->countが2の時に初めてデータが取れるのでtempにそのまま書き込みたい&方向を正規化したいのでこっちに分岐をいれる
+					if (!finCalData.isEmpty() && !finSaveData.isEmpty()) {//finにデータが入っている時
+						difference = unit(difference);//方向を正規化
+						//今までのデータをfindataにいれる
+						finCalData = finCalData + "\n" + tempData + "\n" + tempRSSI;
+						finSaveData = finSaveData + "\n" + tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
+					} else {//finにデータが入っていない時-> finと足さずにいれる(改行されちゃうので)
+						difference = unit(difference);//方向を正規化
+						finCalData = tempData + "\n" + tempRSSI;
+						finSaveData = tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
+					}
+				}
 
+				//新しく書き込み
+				tempData = strTag;
+				tempRSSI = String.valueOf(rssi);
+
+				//方向リセット
+				lastAccelTime = 0;
+				int i = 0;
+				for (i = 0; i < 3; i++) {
+					speed[i] = 0;
+					difference[i] = 0;
+				}
+
+				//新しい方向の基準を設定
+				//N軸，E軸の設定
+				orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ
+				float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ
+				float oriEast = orientationRad;                         //θ
+				//N軸
+				north[0] = (float) Math.cos(oriNorth);
+				north[1] = (float) Math.sin(oriNorth);
+				north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2];
+				north = unit(north);    //正規化
+				//E軸
+				east[0] = (float) Math.cos(oriEast);
+				east[1] = (float) Math.sin(oriEast);
+				east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
+				east = unit(east);  //正規化
+			/*else{
+				finCalData= tempData + "\n" + tempRSSI;
+				finSaveData = tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
+			}*/
+
+			}
+		}
+			//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";
+
+		else{//連続している時
+			 //前のデータセットに付け足し
+			tempData=tempData+","+strTag;
+			tempRSSI=tempRSSI+","+String.valueOf(rssi);
+			//以下デバッグ用
+			//ShowToast(String.valueOf(tempDataList));
+			//finData = finData+"\n"+strTag+"\n"+rssi+"\n"+time +"\n";
+		}
+
+		pastTime = time;
 		//listRefreshにデータを送る
 		ListRefresh(pcEpc,rssi,df_NOT_INVALID_RFM,time);
 	}
@@ -1058,12 +1269,10 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 	public void onPcEpcSensorDataReceived(final int[] pcEpc,final int[] sensorData) {  // RFM
 		//現在時刻を取得
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		//ミリ秒部分だけ出力
-		SimpleDateFormat sdf = new SimpleDateFormat("SSS");
-		//string型にする
-		String strtmp = sdf.format(timestamp);
 		//int型にする
-		Integer time = Integer.parseInt(strtmp);
+		int time = (int) System.currentTimeMillis();
+
+		//ShowToast(strtmp);
 
 		if(SensorTag.getInstance().parseSensorData(sensorData))
 		{
@@ -1128,6 +1337,36 @@ public class MainActivity extends AppCompatActivity implements IOnAsDeviceRfidEv
 			}
 		});
 	}*/
+
+	//方向推定の時に必要な関数
+	private float[] unit(float[] vec){
+		//入力されたベクトルを正規化
+		float[] unitVec = new float[vec.length];
+		float scalar = (float)Math.sqrt(Math.pow(vec[0],2) + Math.pow(vec[1],2) + Math.pow(vec[2],2));
+		for(int i = 0; i < 3; i++){
+			unitVec[i] = vec[i] / scalar;
+		}
+		return  unitVec;
+	}
+
+	private float[] rad2deg(float[] vec){
+		//入力された値をradianからdegreeに変換
+		int VEC_SIZE = vec.length;
+		float[] retvec = new float[VEC_SIZE];
+		for(int i = 0; i < VEC_SIZE; i++){
+			retvec[i] = vec[i] / (float)Math.PI*180;
+		}
+		return retvec;
+	}
+
+	private UploadTask.Listener createListener() {
+		return new UploadTask.Listener() {
+			@Override
+			public void onSuccess(String result) {
+				ShowToast(result);
+			}
+		};
+	}
 }
 
 

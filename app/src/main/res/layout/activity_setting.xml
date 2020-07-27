@@ -109,7 +109,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="22dp"
-                    android:src="@drawable/disclosure" />
+                    android:src="@drawable/disclosure"/>
 
                 <TextView
                     android:id="@+id/output_power"

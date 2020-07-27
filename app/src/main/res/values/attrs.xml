@@ -38,16 +38,16 @@
 	</declare-styleable>
 	
     <attr name="textAppearance" format="reference" />
-  <declare-styleable name="TextAppearanceSwitch" >
+    <declare-styleable name="TextAppearanceSwitch" >
       	<attr name="textColor" format="color" /> 
         <attr name="textSize" format="dimension"/>
         <attr name="textStyle" format="reference"/>
         <attr name="typeface" format="reference"/>
-        <attr name="fontFamily" format="reference"/>
+        <attr name="fontName" format="reference"/>
         <attr name="textColorHighlight" format="color"/>
         <attr name="textColorHint" format="color" />
         <attr name="textColorLink" format="color" />
         <attr name="textAllCaps" format="boolean" />
-    </declare-styleable>   
+    </declare-styleable>
 
 </resources>
