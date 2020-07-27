@@ -1,0 +1,286 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.minireader.sdevice.rfid"
+4    android:versionCode="1"
+5    android:versionName="0.0.8" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="18"
+8-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+10
+11    <supports-screens
+11-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:7:5-13:40
+12        android:anyDensity="true"
+12-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:8:9-34
+13        android:largeScreens="true"
+13-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:9:9-36
+14        android:normalScreens="true"
+14-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:10:9-37
+15        android:resizeable="true"
+15-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:11:9-34
+16        android:smallScreens="true"
+16-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:12:9-36
+17        android:xlargeScreens="true" />
+17-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:13:9-37
+18
+19    <!-- <uses-feature -->
+20    <!-- android:name="android.hardware.camera" -->
+21    <!-- android:required="false" /> -->
+22    <!-- <uses-feature -->
+23    <!-- android:name="android.hardware.telephony" -->
+24    <!-- android:required="false" /> -->
+25    <!-- <uses-feature -->
+26    <!-- android:name="android.hardware.bluetooth_le" -->
+27    <!-- android:required="true" /> -->
+28
+29
+30    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+31    <!-- <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> -->
+32    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+33    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
+34    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
+35
+36    <uses-feature android:name="android.hardware.usb.host" />
+36-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:32:5-62
+36-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:32:19-59
+37
+38    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+38-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:33:5-81
+38-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:33:22-78
+39    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+39-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:34:5-80
+39-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:34:22-77
+40    <uses-permission android:name="android.permission.WAKE_LOCK" />
+40-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:35:5-68
+40-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:35:22-65
+41    <uses-permission android:name="android.permission.USB_PERMISSION" />
+41-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:36:5-73
+41-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:36:22-70
+42
+43    <application
+43-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:39:5-153:19
+44        android:allowBackup="true"
+44-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:40:9-35
+45        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+45-->[com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+46        android:debuggable="true"
+47        android:icon="@drawable/ic_launcher"
+47-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:41:9-45
+48        android:label="A30D"
+48-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:42:9-29
+49        android:testOnly="true"
+50        android:theme="@android:style/Theme.NoTitleBar" >
+50-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:43:9-56
+51        <activity
+51-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:45:9-66:20
+52            android:name="com.minireader.sdevice.rfid.MainActivity"
+52-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:46:13-41
+53            android:clearTaskOnLaunch="true"
+53-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:47:13-45
+54            android:configChanges="keyboardHidden|orientation|screenSize"
+54-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:48:13-74
+55            android:launchMode="singleInstance"
+55-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:49:13-48
+56            android:screenOrientation="sensorPortrait" >
+56-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:50:13-55
+57            <intent-filter>
+57-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:51:13-55:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:52:17-69
+58-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:52:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:54:17-77
+60-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:54:27-74
+61            </intent-filter>
+62            <intent-filter>
+62-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:56:13-61:29
+63                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+63-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:57:17-90
+63-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:57:25-87
+64
+65                <category android:name="android.intent.category.DEFAULT" />
+65-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:59:17-76
+65-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:59:27-73
+66                <category android:name="android.intent.category.BROWSABLE" />
+66-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:60:17-78
+66-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:60:27-75
+67            </intent-filter>
+68
+69            <meta-data
+69-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:63:13-65:57
+70                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+70-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:64:17-79
+71                android:resource="@xml/device_filter" />
+71-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:65:17-54
+72        </activity>
+73        <activity
+73-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:67:9-70:67
+74            android:name="com.minireader.sdevice.rfid.RegionActivity"
+74-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:68:13-43
+75            android:configChanges="orientation|keyboardHidden|screenSize"
+75-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:69:13-74
+76            android:screenOrientation="sensorPortrait" />
+76-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:70:13-55
+77        <activity
+77-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:71:9-74:67
+78            android:name="com.minireader.sdevice.rfid.ChannelActivity"
+78-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:72:13-44
+79            android:configChanges="orientation|keyboardHidden|screenSize"
+79-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:73:13-74
+80            android:screenOrientation="sensorPortrait" />
+80-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:74:13-55
+81        <activity
+81-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:75:9-78:67
+82            android:name="com.minireader.sdevice.rfid.AntiModeActivity"
+82-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:76:13-45
+83            android:configChanges="orientation|keyboardHidden|screenSize"
+83-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:77:13-74
+84            android:screenOrientation="sensorPortrait" />
+84-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:78:13-55
+85        <activity
+85-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:79:9-82:67
+86            android:name="com.minireader.sdevice.rfid.HoppingView"
+86-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:80:13-40
+87            android:configChanges="orientation|keyboardHidden|screenSize"
+87-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:81:13-74
+88            android:screenOrientation="sensorPortrait" />
+88-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:82:13-55
+89        <activity
+89-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:83:9-87:67
+90            android:name="com.minireader.sdevice.rfid.TagAccessActivity"
+90-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:84:13-46
+91            android:configChanges="orientation|keyboardHidden|screenSize"
+91-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:85:13-74
+92            android:label="@string/title_activity_tag_access"
+92-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:86:13-62
+93            android:screenOrientation="sensorPortrait" />
+93-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:87:13-55
+94        <activity
+94-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:88:9-92:67
+95            android:name="com.minireader.sdevice.rfid.OptionActivity"
+95-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:89:13-43
+96            android:configChanges="orientation|keyboardHidden|screenSize"
+96-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:90:13-74
+97            android:label="@string/title_activity_option"
+97-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:91:13-58
+98            android:screenOrientation="sensorPortrait" />
+98-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:92:13-55
+99        <activity
+99-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:93:9-97:67
+100            android:name="com.minireader.sdevice.rfid.PopSettingActivity"
+100-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:94:13-47
+101            android:configChanges="orientation|keyboardHidden|screenSize"
+101-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:95:13-74
+102            android:label="@string/title_activity_pop_setting"
+102-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:96:13-63
+103            android:screenOrientation="sensorPortrait" />
+103-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:97:13-55
+104        <activity
+104-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:99:9-104:66
+105            android:name="com.minireader.sdevice.rfid.ReadWriteActivity"
+105-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:100:13-46
+106            android:configChanges="orientation|keyboardHidden|screenSize"
+106-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:101:13-74
+107            android:label="@string/title_activity_read"
+107-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:102:13-56
+108            android:screenOrientation="sensorPortrait"
+108-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:103:13-55
+109            android:windowSoftInputMode="stateHidden" />
+109-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:104:13-54
+110        <activity
+110-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:105:9-109:67
+111            android:name="com.minireader.sdevice.rfid.OnOffTimeActivity"
+111-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:106:13-46
+112            android:configChanges="orientation|keyboardHidden|screenSize"
+112-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:107:13-74
+113            android:label="@string/title_activity_on_off_time"
+113-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:108:13-63
+114            android:screenOrientation="sensorPortrait" />
+114-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:109:13-55
+115        <activity
+115-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:110:9-114:67
+116            android:name="com.minireader.sdevice.rfid.OutPutPowerActivity"
+116-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:111:13-48
+117            android:configChanges="orientation|keyboardHidden|screenSize"
+117-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:112:13-74
+118            android:label="@string/title_activity_out_put_power"
+118-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:113:13-65
+119            android:screenOrientation="sensorPortrait" />
+119-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:114:13-55
+120        <activity
+120-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:115:9-119:67
+121            android:name="com.minireader.sdevice.rfid.StopCondisionsActivity"
+121-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:116:13-51
+122            android:configChanges="orientation|keyboardHidden|screenSize"
+122-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:117:13-74
+123            android:label="@string/title_activity_stop_condisions"
+123-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:118:13-67
+124            android:screenOrientation="sensorPortrait" />
+124-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:119:13-55
+125        <activity
+125-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:120:9-124:67
+126            android:name="com.minireader.sdevice.rfid.LockActivity"
+126-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:121:13-41
+127            android:configChanges="orientation|keyboardHidden|screenSize"
+127-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:122:13-74
+128            android:label="@string/title_activity_lock"
+128-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:123:13-56
+129            android:screenOrientation="sensorPortrait" />
+129-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:124:13-55
+130        <activity
+130-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:125:9-129:67
+131            android:name="com.minireader.sdevice.rfid.KillActivity"
+131-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:126:13-41
+132            android:configChanges="orientation|keyboardHidden|screenSize"
+132-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:127:13-74
+133            android:label="@string/title_activity_kill"
+133-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:128:13-56
+134            android:screenOrientation="sensorPortrait" />
+134-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:129:13-55
+135        <activity
+135-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:130:9-133:67
+136            android:name="com.minireader.sdevice.rfid.EncodingTypeActivity"
+136-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:131:13-49
+137            android:configChanges="orientation|keyboardHidden|screenSize"
+137-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:132:13-74
+138            android:screenOrientation="sensorPortrait" />
+138-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:133:13-55
+139        <activity
+139-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:134:9-137:67
+140            android:name="com.minireader.sdevice.rfid.SessionActivity"
+140-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:135:13-44
+141            android:configChanges="orientation|keyboardHidden|screenSize"
+141-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:136:13-74
+142            android:screenOrientation="sensorPortrait" />
+142-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:137:13-55
+143        <activity
+143-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:139:9-142:67
+144            android:name="com.minireader.sdevice.rfid.InfoActivity"
+144-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:140:13-41
+145            android:configChanges="orientation|keyboardHidden|screenSize"
+145-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:141:13-74
+146            android:screenOrientation="sensorPortrait" />
+146-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:142:13-55
+147        <activity
+147-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:144:9-147:67
+148            android:name="com.minireader.sdevice.rfid.SettingOnOffActivity"
+148-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:145:13-49
+149            android:configChanges="orientation|keyboardHidden|screenSize"
+149-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:146:13-74
+150            android:screenOrientation="sensorPortrait" />
+150-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:147:13-55
+151
+152        <service
+152-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:149:9-152:47
+153            android:name="com.minireader.sdevice.rfid.CloseService"
+153-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:150:13-41
+154            android:enabled="true"
+154-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:151:13-35
+155            android:exported="true" />
+155-->/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:152:13-36
+156    </application>
+157
+158</manifest>

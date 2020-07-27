@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/debug/jniLibs"/></dataSet></merger>

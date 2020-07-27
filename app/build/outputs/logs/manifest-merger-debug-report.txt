@@ -1,0 +1,403 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/09003b92f2f3d5aa8ab5147ec79b3a98/support-v4-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:2:1-18:12
+MERGED from [com.android.support:design:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/275cec3d7aafd7f9c88f677de59ceec8/design-28.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e111dde411ce5610ce23bd1eb9e8ada0/appcompat-v7-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/d406b7947289dc9bcbcd6f57fa432b47/support-media-compat-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/274f684c73bd01ffd99cccd8a2f6d272/support-fragment-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/a3a6162a0e4ee8c963a09697a25611e7/recyclerview-v7-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/22693e649036ee56f5f507857a6b5451/animated-vector-drawable-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e74d0677b85cb99e7c7d7c38c5579ce9/support-core-ui-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/c4a9d3aab3df4ad7884d73a688a8c9d1/support-core-utils-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/f7f6cd59fee969b279773a2298b7454d/transition-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/c9895d13681cd36c45a2550853feaf4e/loader-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/13915583513294aad7db9aabb01abc11/viewpager-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/4f9de2bd7d635b1e8c5832e3a72b2013/coordinatorlayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/95ac4be3cd72183d0530795f0c49b780/drawerlayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/5ae508d325769399a79ec1560b070c4a/slidingpanelayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e90e0485f8c1bedab79f1c354cbeccc0/customview-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/4e0b3cc0c50dffe48d85309f1f0d1b0d/swiperefreshlayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/cda6b1b17defa4eaa36cccb1d0947548/asynclayoutinflater-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b54b15c3500bbbb7a5bdd2fa5c613215/support-vector-drawable-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/74b8c9478074e98a2686807b1ed25dd8/cardview-v7-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/23853ed77066682b95e7bf1bc9d8632c/versionedparcelable-28.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/a05ac61d3a1fee7a005503005527427f/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/dc1c82e708473b018336613ce44a63a8/documentfile-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/ced520082e63b6b9f1f052cbf705952e/localbroadcastmanager-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/bd791d5018998625dbd15e29d6ef366a/print-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/a3a10d91705f6e3909e83cdbb325b39f/interpolator-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e3d225558292663ecaa87ade177daa57/cursoradapter-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/d72284e8c980503c8e71989cbd24012e/viewmodel-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/95de91661e302ecb431606c4f4b420a4/livedata-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/b8e6d8518f7319f2c087464261364860/livedata-core-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/2ae5a345e542e1dd60e61b5000a444b3/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:1-155:12
+	package
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:4:5-42
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:6:5-32
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:5:5-28
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+supports-screens
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:7:5-13:40
+	android:largeScreens
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:9:9-36
+	android:smallScreens
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:12:9-36
+	android:normalScreens
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:10:9-37
+	android:xlargeScreens
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:13:9-37
+	android:resizeable
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:11:9-34
+	android:anyDensity
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:8:9-34
+uses-feature#android.hardware.usb.host
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:32:5-62
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:32:19-59
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:33:5-81
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:33:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:34:5-80
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:34:22-77
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:35:5-68
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:35:22-65
+uses-permission#android.permission.USB_PERMISSION
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:36:5-73
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:36:22-70
+application
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:39:5-153:19
+MERGED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:11:5-16:19
+MERGED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:11:5-16:19
+MERGED from [com.android.support:design:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/275cec3d7aafd7f9c88f677de59ceec8/design-28.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/275cec3d7aafd7f9c88f677de59ceec8/design-28.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/23853ed77066682b95e7bf1bc9d8632c/versionedparcelable-28.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/23853ed77066682b95e7bf1bc9d8632c/versionedparcelable-28.0.0/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:42:9-29
+		REJECTED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:14:9-41
+	android:icon
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:41:9-45
+		REJECTED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:13:9-45
+	android:allowBackup
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:40:9-35
+	android:theme
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:43:9-56
+		REJECTED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:15:9-40
+	tools:replace
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:44:9-65
+activity#com.minireader.sdevice.rfid.MainActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:45:9-66:20
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:50:13-55
+	android:clearTaskOnLaunch
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:47:13-45
+	android:launchMode
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:49:13-48
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:48:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:46:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:51:13-55:29
+action#android.intent.action.MAIN
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:52:17-69
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:52:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:54:17-77
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:54:27-74
+intent-filter#action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:56:13-61:29
+action#android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:57:17-90
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:57:25-87
+category#android.intent.category.DEFAULT
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:59:17-76
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:59:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:60:17-78
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:60:27-75
+meta-data#android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:63:13-65:57
+	android:resource
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:65:17-54
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:64:17-79
+activity#com.minireader.sdevice.rfid.RegionActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:67:9-70:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:70:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:69:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:68:13-43
+activity#com.minireader.sdevice.rfid.ChannelActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:71:9-74:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:74:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:73:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:72:13-44
+activity#com.minireader.sdevice.rfid.AntiModeActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:75:9-78:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:78:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:77:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:76:13-45
+activity#com.minireader.sdevice.rfid.HoppingView
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:79:9-82:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:82:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:81:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:80:13-40
+activity#com.minireader.sdevice.rfid.TagAccessActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:83:9-87:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:87:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:86:13-62
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:85:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:84:13-46
+activity#com.minireader.sdevice.rfid.OptionActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:88:9-92:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:92:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:91:13-58
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:90:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:89:13-43
+activity#com.minireader.sdevice.rfid.PopSettingActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:93:9-97:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:97:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:96:13-63
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:95:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:94:13-47
+activity#com.minireader.sdevice.rfid.ReadWriteActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:99:9-104:66
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:103:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:102:13-56
+	android:windowSoftInputMode
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:104:13-54
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:101:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:100:13-46
+activity#com.minireader.sdevice.rfid.OnOffTimeActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:105:9-109:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:109:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:108:13-63
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:107:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:106:13-46
+activity#com.minireader.sdevice.rfid.OutPutPowerActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:110:9-114:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:114:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:113:13-65
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:112:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:111:13-48
+activity#com.minireader.sdevice.rfid.StopCondisionsActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:115:9-119:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:119:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:118:13-67
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:117:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:116:13-51
+activity#com.minireader.sdevice.rfid.LockActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:120:9-124:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:124:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:123:13-56
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:122:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:121:13-41
+activity#com.minireader.sdevice.rfid.KillActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:125:9-129:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:129:13-55
+	android:label
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:128:13-56
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:127:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:126:13-41
+activity#com.minireader.sdevice.rfid.EncodingTypeActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:130:9-133:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:133:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:132:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:131:13-49
+activity#com.minireader.sdevice.rfid.SessionActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:134:9-137:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:137:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:136:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:135:13-44
+activity#com.minireader.sdevice.rfid.InfoActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:139:9-142:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:142:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:141:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:140:13-41
+activity#com.minireader.sdevice.rfid.SettingOnOffActivity
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:144:9-147:67
+	android:screenOrientation
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:147:13-55
+	android:configChanges
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:146:13-74
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:145:13-49
+service#com.minireader.sdevice.rfid.CloseService
+ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:149:9-152:47
+	android:enabled
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:151:13-35
+	android:exported
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:152:13-36
+	android:name
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml:150:13-41
+uses-sdk
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:support-v4:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/09003b92f2f3d5aa8ab5147ec79b3a98/support-v4-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/09003b92f2f3d5aa8ab5147ec79b3a98/support-v4-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:7:5-9:41
+MERGED from [:sdk-release] /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/sdk-release/build/.transforms/abe9be241b58311f9db878992c0d4bee/sdk-release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/275cec3d7aafd7f9c88f677de59ceec8/design-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/275cec3d7aafd7f9c88f677de59ceec8/design-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e111dde411ce5610ce23bd1eb9e8ada0/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e111dde411ce5610ce23bd1eb9e8ada0/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/d406b7947289dc9bcbcd6f57fa432b47/support-media-compat-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/d406b7947289dc9bcbcd6f57fa432b47/support-media-compat-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/274f684c73bd01ffd99cccd8a2f6d272/support-fragment-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/274f684c73bd01ffd99cccd8a2f6d272/support-fragment-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/a3a6162a0e4ee8c963a09697a25611e7/recyclerview-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/a3a6162a0e4ee8c963a09697a25611e7/recyclerview-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/22693e649036ee56f5f507857a6b5451/animated-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/22693e649036ee56f5f507857a6b5451/animated-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e74d0677b85cb99e7c7d7c38c5579ce9/support-core-ui-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e74d0677b85cb99e7c7d7c38c5579ce9/support-core-ui-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/c4a9d3aab3df4ad7884d73a688a8c9d1/support-core-utils-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/c4a9d3aab3df4ad7884d73a688a8c9d1/support-core-utils-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/f7f6cd59fee969b279773a2298b7454d/transition-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/f7f6cd59fee969b279773a2298b7454d/transition-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/c9895d13681cd36c45a2550853feaf4e/loader-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/c9895d13681cd36c45a2550853feaf4e/loader-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/13915583513294aad7db9aabb01abc11/viewpager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/13915583513294aad7db9aabb01abc11/viewpager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/4f9de2bd7d635b1e8c5832e3a72b2013/coordinatorlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/4f9de2bd7d635b1e8c5832e3a72b2013/coordinatorlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/95ac4be3cd72183d0530795f0c49b780/drawerlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/95ac4be3cd72183d0530795f0c49b780/drawerlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/5ae508d325769399a79ec1560b070c4a/slidingpanelayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/5ae508d325769399a79ec1560b070c4a/slidingpanelayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e90e0485f8c1bedab79f1c354cbeccc0/customview-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e90e0485f8c1bedab79f1c354cbeccc0/customview-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/4e0b3cc0c50dffe48d85309f1f0d1b0d/swiperefreshlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/4e0b3cc0c50dffe48d85309f1f0d1b0d/swiperefreshlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/cda6b1b17defa4eaa36cccb1d0947548/asynclayoutinflater-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/cda6b1b17defa4eaa36cccb1d0947548/asynclayoutinflater-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b54b15c3500bbbb7a5bdd2fa5c613215/support-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b54b15c3500bbbb7a5bdd2fa5c613215/support-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/b78dd6eebf15fc4e52f3d86799a3854c/support-compat-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/74b8c9478074e98a2686807b1ed25dd8/cardview-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/74b8c9478074e98a2686807b1ed25dd8/cardview-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/23853ed77066682b95e7bf1bc9d8632c/versionedparcelable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/23853ed77066682b95e7bf1bc9d8632c/versionedparcelable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/a05ac61d3a1fee7a005503005527427f/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/a05ac61d3a1fee7a005503005527427f/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/dc1c82e708473b018336613ce44a63a8/documentfile-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/dc1c82e708473b018336613ce44a63a8/documentfile-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/ced520082e63b6b9f1f052cbf705952e/localbroadcastmanager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/ced520082e63b6b9f1f052cbf705952e/localbroadcastmanager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/bd791d5018998625dbd15e29d6ef366a/print-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/bd791d5018998625dbd15e29d6ef366a/print-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/a3a10d91705f6e3909e83cdbb325b39f/interpolator-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/a3a10d91705f6e3909e83cdbb325b39f/interpolator-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e3d225558292663ecaa87ade177daa57/cursoradapter-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/erika/.gradle/caches/transforms-2/files-2.1/e3d225558292663ecaa87ade177daa57/cursoradapter-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/d72284e8c980503c8e71989cbd24012e/viewmodel-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/d72284e8c980503c8e71989cbd24012e/viewmodel-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/95de91661e302ecb431606c4f4b420a4/livedata-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/95de91661e302ecb431606c4f4b420a4/livedata-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/b8e6d8518f7319f2c087464261364860/livedata-core-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/b8e6d8518f7319f2c087464261364860/livedata-core-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/2ae5a345e542e1dd60e61b5000a444b3/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/erika/.gradle/caches/transforms-2/files-2.1/2ae5a345e542e1dd60e61b5000a444b3/runtime-1.1.1/AndroidManifest.xml:20:5-44
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		ADDED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/AndroidManifest.xml

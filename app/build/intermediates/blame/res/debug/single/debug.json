@@ -1,0 +1,442 @@
+[
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_on.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_on.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_log_ble.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/log_ble.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_on_off_time.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_on_off_time.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_stop_conditions.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_stop_conditions.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_stop_condisions.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/stop_condisions.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_hopping.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_hopping.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_top_my_hex.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/top_my_hex.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_out_put_power.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_out_put_power.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/raw_read_.wav.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/raw/read_.wav"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_log_otg.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/log_otg.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_pop_information.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/pop_information.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_bg.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_bg.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_sel_on.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_sel_on.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_encoding_type.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_encoding_type.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_kill.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_kill.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_btn_off_search.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_btn_off_search.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_cell_ble.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/cell_ble.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_check.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/check.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_press2.jpg.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/press2.jpg"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_kill.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/kill.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_reload_btn.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/reload_btn.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_channel.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_channel.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_item_bottom_navigation.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/item_bottom_navigation.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_info.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_info.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_listview_bg.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/listview_bg.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_reload_off.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_reload_off.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_cell_tag.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/cell_tag.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_segment_radio_left_7.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/segment_radio_left_7.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_out_put_power.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/out_put_power.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_fragment_setting.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/fragment_setting.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_dialog_ble.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/dialog_ble.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_pop_setting.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/pop_setting.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/anim_slide_out_left2.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/anim/slide_out_left2.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_log_ble2.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/log_ble2.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_pop_settingctivity.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/pop_settingctivity.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_btn_off_cancel.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_btn_off_cancel.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_tag_access.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_tag_access.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/anim_slide_out_right2.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/anim/slide_out_right2.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/xml_device_filter.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/xml/device_filter.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_dialog_hex.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/dialog_hex.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_btn_bg.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_btn_bg.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_setting.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_setting.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_read.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/read.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_del_on.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_del_on.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_session.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_session.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_btn_back.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_btn_back.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_listview_tag_bg.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/listview_tag_bg.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_reload_on.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_reload_on.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_listview_divider.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/listview_divider.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_lock.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_lock.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_cell_tag_empty.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/cell_tag_empty.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_ble_icon.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/ble_icon.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_toggle_switch_off.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/toggle_switch_off.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_lock.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/lock.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/raw_read.wav.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/raw/read.wav"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_toggle_switch.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/toggle_switch.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_press.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/press.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_btn_on_cancel.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_btn_on_cancel.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_btn_search.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_btn_search.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_delete_btn.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/delete_btn.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_readwrite.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_readwrite.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_toggle_switch_on.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/toggle_switch_on.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_cell_setting.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/cell_setting.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_region.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_region.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_on_off_time.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/on_off_time.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_segment_btn_7.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/segment_btn_7.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_segment_radio_middle_7.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/segment_radio_middle_7.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_select_btn.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/select_btn.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_lbs.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/lbs.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_view_bg.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/view_bg.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_bt_off.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/bt_off.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_off.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_off.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_btn_text_colors.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_btn_text_colors.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_non_check.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/non_check.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_top.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_top.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_setting_onoff.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_setting_onoff.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/color_segment_radio_text_colors.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/color/segment_radio_text_colors.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_top_sync.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/top_sync.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_background.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_background.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_top_server_hex.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/top_server_hex.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_segment_radio_right_7.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/segment_radio_right_7.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_fragment_search.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/fragment_search.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_disclosure.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/disclosure.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_btn_cancel.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_btn_cancel.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_middle.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_middle.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_del_off.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_del_off.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_anti.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_anti.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_blank.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/blank.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_search_btn_on_search.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/search_btn_on_search.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_sel_off.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_sel_off.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_option.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/option.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_app_setting.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/app_setting.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_btn_back_bg.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_btn_back_bg.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_dialog_synk.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/dialog_synk.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_main.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/anim_slide_out_left1.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/anim/slide_out_left1.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_cell_item_selector.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/cell_item_selector.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_lbs2.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/lbs2.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_icon.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/icon.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_cell_setting_check.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/cell_setting_check.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_option.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_option.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/layout_activity_gpio.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/layout/activity_gpio.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_arrow.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/arrow.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_new_hex.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/new_hex.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_nav_btn_text_colors_battery.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/nav_btn_text_colors_battery.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/menu_tag_access.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/menu/tag_access.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_btn_click.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/btn_click.xml"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/drawable_bt_on.png.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/drawable/bt_on.png"
+    },
+    {
+        "merged": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/res/merged/debug/anim_slide_out_right1.xml.flat",
+        "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/anim/slide_out_right1.xml"
+    }
+]

@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "map": [
+                {
+                    "source": "/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/src/main/res/values-v11/styles.xml",
+                    "from": {
+                        "startLines": "7,17",
+                        "startColumns": "4,4",
+                        "startOffsets": "183,517",
+                        "endLines": "14,19",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,674"
+                    },
+                    "to": {
+                        "startLines": "2,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,347",
+                        "endLines": "9,12",
+                        "endColumns": "12,12",
+                        "endOffsets": "342,502"
+                    }
+                }
+            ]
+        }
+    ]
+}
