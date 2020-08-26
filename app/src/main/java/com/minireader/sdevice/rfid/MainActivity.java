@@ -52,9 +52,9 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	private final int df_NOT_INVALID_RSSI = 10;
 	private final String df_NOT_INVALID_RFM = "nRFM";
 	private int encoding_type = EpcConverter.HEX_STRING;
-	private int max_tag = 40;//maximum number of tags to read
-	private int max_time = 10;//maximum elapsed time to read tags(sec)
-	private int repeat_cycle = 0;//how many times reader performs inventory round
+	private int max_tag = 4000;//maximum number of tags to read
+	private int max_time = 10;//maximum elapsed time to read tags(sec) 経過時間
+	private int repeat_cycle = 100;//how many times reader performs inventory round
 
 
 	private ListView epclist;
@@ -78,7 +78,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 	ToggleButton setPower;
 
-	Button option, clearScreen, stopAutoRead, btn_ext_read, btn_ext_rfm, btn_battery;
+	Button option, clearScreen, stopAutoRead, btn_ext_read, btn_ext_rfm, btn_battery,btn_upload;
 
 	//タグのデータをcsvに格納するためのデータ
 	public ArrayList<MainActivity.MyTagData> myTagDataArrayList = new ArrayList<>();
@@ -89,8 +89,8 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	private Integer pastTime = 0;//時間保存用
 	private BufferedWriter bw;
 	private Integer countTagReadRssi =0;
-	//private ArrayList<MainActivity.MyTagData> tempDataList = new ArrayList<>();//一時保存用
-	//private ArrayList<MainActivity.MyTagData> finDataList = new ArrayList<>();//書き込み前保存用
+	private ArrayList<Integer> tempIDList = new ArrayList<>();//一時保存用
+	private ArrayList<MainActivity.MyTagData> finDataList = new ArrayList<>();//書き込み前保存用
 
 	//POST通信用データ
 	private  UploadTask task;
@@ -137,8 +137,11 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	//物探し用のクラス
 	public class MyTagData {
 		public Integer time;
-		public String data;
+		public String name;
 		public float rssi;
+		public String x_vec;
+		public String y_vec;
+		public String z_vec;
 	}
 
 	//センサー値の変化があったときのevent
@@ -165,8 +168,8 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				}
 
 
-				if(check && abs(accelValue[0]) > 0.05 || abs(accelValue[1]) > 0.05 || abs(accelValue[2]) > 0.05) {
-					//if(check){
+				//if(check && abs(accelValue[0]) > 0.05 || abs(accelValue[1]) > 0.05 || abs(accelValue[2]) > 0.05) {//もしかしたらいらないかも
+				if(check){//上がいらない場合は、こっちに切り替える
 
 					//moveTextx.setText("accelValue[0]:" + String.valueOf(accelValue[0]));
 					//moveTexty.setText("accelValue[1]:" + String.valueOf(accelValue[1]));
@@ -319,7 +322,6 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		});
 		btn_ext_read.setEnabled(false);
 
-
 		// Stop button
 		stopAutoRead = (Button) findViewById(R.id.btn_stop);
 		stopAutoRead.setOnClickListener(new View.OnClickListener()
@@ -331,15 +333,34 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				buttonControl(0);
 				check=false;
 				AsDeviceMngr.getInstance().getOTG().stopReadTags();
+			}
+		});
+		stopAutoRead.setEnabled(false);
+
+		//upload button
+		btn_upload=(Button)findViewById(R.id.upload);
+		btn_upload.setOnClickListener(new View.OnClickListener() {
+			@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+			@Override
+			public void onClick(View v) {
+				createCSVData();//ここでcsvのデータ形式にする
+
+				//ファイルの読み書きの話
 				File path = getExternalFilesDir(null);
 				String testfile ="calc.csv";
 				File file = new File(path, testfile);
+				if(file.exists()){
+					file.delete();
+					ShowToast("Delete");
+				}
+
 				try {
 					FileOutputStream outputStream = new FileOutputStream(file, true);
 					OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, UTF_8);
 					//outputStream.write(finData.getBytes());
 					//outputStream.close();
 					bw = new BufferedWriter(outputStreamWriter);
+					finCalData = finCalData+"\n";
 					bw.write(finCalData);
 					bw.flush();
 					bw.close();
@@ -352,12 +373,17 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				File path2 = getExternalFilesDir(null);
 				String testfile2 ="save.csv";
 				File file2 = new File(path2, testfile2);
+				if(file2.exists()){
+					file2.delete();
+					ShowToast("Delete");
+				}
 				try {
 					FileOutputStream outputStream2 = new FileOutputStream(file2, true);
 					OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(outputStream2, UTF_8);
 					//outputStream.write(finData.getBytes());
 					//outputStream.close();
 					BufferedWriter bw = new BufferedWriter(outputStreamWriter2);
+					finSaveData = finSaveData+"\n";
 					bw.write(finSaveData);
 					bw.flush();
 					bw.close();
@@ -376,14 +402,12 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				task2.execute(finSaveData);
 
 
-				finCalData =null;
-				finSaveData=null;
+				finCalData ="";
+				finSaveData="";
+				countTagReadRssi = 0;
 			}
 		});
 
-
-
-		stopAutoRead.setEnabled(false);
 
 		// Clear button
 		clearScreen = (Button) findViewById(R.id.btn_clear);
@@ -494,7 +518,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	public void setPowerOn(){
 
 		mPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		boolean beep = mPrefs.getBoolean("READER_BEEP", true);
+		boolean beep = mPrefs.getBoolean("READER_BEEP", false);
 		boolean vib  = mPrefs.getBoolean("READER_VIB", true);
 		boolean led  = mPrefs.getBoolean("READER_LED", true);
 		boolean illu  = mPrefs.getBoolean("READER_ILLU", true);
@@ -522,6 +546,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		tagDataList.clear();
 		tagAdapter.notifyDataSetChanged();
 		tvTagCount.setText("0  tags");
+		countTagReadRssi = 0;
 	}
 
 	@Override
@@ -1108,6 +1133,38 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 	}
 
+	public void createCSVData(){//CSVのデータにするときに使う関数、ここで同スキャン別スキャン判定等々を行う
+
+		int index;
+
+		/*for(index = 0 ;index<finDataList.size();index++){
+			//同じスキャンの時
+			if(finDataList.get(index).time - finDataList.get(index-1).time < 100){
+				tempData=tempData+finDataList.get(index).name;
+				tempIDList.add(tempData);
+				finDataList.get(index).x_vec="";
+				finDataList.get(index).y_vec="";
+				finDataList.get(index).z_vec="";
+			}
+			else if(){//別スキャンの時かつ前の別スキャンと違うスキャンが読み込まれてた時
+
+
+			}
+		}*/
+		//以下取ってきたものを全てcsv形式に直すもの
+		for(index=0;index<finDataList.size();index++){
+			if(finDataList.get(index).time-pastTime<100) {
+				finSaveData = finSaveData + "\n" +","+ String.valueOf(finDataList.get(index).time) + "," + finDataList.get(index).name + "," + finDataList.get(index).rssi + "," + finDataList.get(index).x_vec + "," + finDataList.get(index).y_vec + "," + finDataList.get(index).z_vec;
+				pastTime=finDataList.get(index).time;
+			}
+			else{
+				finSaveData= finSaveData+ "\n"+"Betu"+","+ String.valueOf(finDataList.get(index).time)+","+finDataList.get(index).name+","+finDataList.get(index).rssi+","+finDataList.get(index).x_vec+","+finDataList.get(index).y_vec+","+finDataList.get(index).z_vec;
+				pastTime=finDataList.get(index).time;
+			}
+		}
+
+	}
+
 
 	@Override
 	public void didSetOptiFreqHPTable(int status) {
@@ -1179,7 +1236,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 
 
-	//rssiがついたタグが読み取れた時発生するイベント
+/*	//rssiがついたタグが読み取れた時発生するイベント
 	@Override
 	public void onTagWithRssiReceived(int[] pcEpc, int rssi) {
 		// TODO Auto-generated method stub
@@ -1198,6 +1255,12 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 			//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";
 			if (countTagReadRssi == 1) {//1回目のスキャン(空データなので何もしない)
 				//何もしない
+				lastAccelTime = 0;
+				int i = 0;
+				for (i = 0; i < 3; i++) {
+					speed[i] = 0;
+					difference[i] = 0;
+				}
 			}
 			else if (countTagReadRssi >= 2) {//countTagが2以上でfinに値が入っている時
 				if (countTagReadRssi != 2) {//2以外の時の処理->countが2の時に初めてデータが取れるのでtempにそのまま書き込みたい&方向を正規化したいのでこっちに分岐をいれる
@@ -1225,25 +1288,27 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 					difference[i] = 0;
 				}
 
-				//新しい方向の基準を設定
-				//N軸，E軸の設定
-				orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ
-				float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ
-				float oriEast = orientationRad;                         //θ
-				//N軸
-				north[0] = (float) Math.cos(oriNorth);
-				north[1] = (float) Math.sin(oriNorth);
-				north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2];
-				north = unit(north);    //正規化
-				//E軸
-				east[0] = (float) Math.cos(oriEast);
-				east[1] = (float) Math.sin(oriEast);
-				east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
-				east = unit(east);  //正規化
-			/*else{
+				if(countTagReadRssi!=2) {
+					//新しい方向の基準を設定
+					//N軸，E軸の設定
+					orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ 方位をラジアンに
+					float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ　方位を90°回転
+					float oriEast = orientationRad;                         //θ 方位を入れる
+					//N軸
+					north[0] = (float) Math.cos(oriNorth);  //oriNorthをcosに射影したものを代入(x座標)
+					north[1] = (float) Math.sin(oriNorth);  //oriNorthをsinに射影したものを代入(y座標)
+					north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2]; //これ何してるのかわかんないけど多分gravity?を頑張っている
+					north = unit(north);    //正規化
+					//E軸 北から-90°してる
+					east[0] = (float) Math.cos(oriEast);//oriEastをcosに射影したものを代入(x座標)
+					east[1] = (float) Math.sin(oriEast);
+					east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
+					east = unit(east);  //正規化
+			*//*else{
 				finCalData= tempData + "\n" + tempRSSI;
 				finSaveData = tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
-			}*/
+			}*//*
+				}
 
 			}
 		}
@@ -1256,9 +1321,178 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 			//以下デバッグ用
 			//ShowToast(String.valueOf(tempDataList));
 			//finData = finData+"\n"+strTag+"\n"+rssi+"\n"+time +"\n";
+
+			//初期化
+				lastAccelTime = 0;
+				int i = 0;
+				for (i = 0; i < 3; i++) {
+					speed[i] = 0;
+					difference[i] = 0;
+				}
 		}
 
 		pastTime = time;
+		//listRefreshにデータを送る
+		ListRefresh(pcEpc,rssi,df_NOT_INVALID_RFM,time);
+	}*/
+
+	//rssiがついたタグが読み取れた時発生するイベント
+	//別スキャンの時だけ計測・記録を行う
+	@Override
+	public void onTagWithRssiReceived(int[] pcEpc, int rssi) {
+		// TODO Auto-generated method stub
+
+		countTagReadRssi++;
+		check=false;
+
+		//現在時刻を取得
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		//int型にする
+		int time = (int) System.currentTimeMillis();//currentTimeMIllis()はlong型で時刻を出しているので
+		//引数のpcEPCをStringにする
+		String strTag = ""+EpcConverter.toString(encoding_type, pcEpc);
+
+		//時刻・ID・RSSI・xベクトル・yベクトル・zベクトルを記録
+		MyTagData mydata = new MyTagData();
+		mydata.time= time;
+		mydata.rssi= rssi;
+		mydata.name= strTag;
+		difference=unit(difference);//正規化
+		mydata.x_vec= String.valueOf(difference[0]);
+		mydata.y_vec= String.valueOf(difference[1]);
+		mydata.z_vec= String.valueOf(difference[2]);
+		finDataList.add(mydata);
+
+		check=true;
+
+		//初期化
+		lastAccelTime = 0;
+		int i = 0;
+		for (i = 0; i < 3; i++) {
+			speed[i] = 0;
+			difference[i] = 0;
+		}
+
+		//新しい方向の基準を設定
+		//N軸，E軸の設定
+		orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ 方位をラジアンに
+		float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ　方位を90°回転
+		float oriEast = orientationRad;                         //θ 方位を入れる
+		//N軸
+		north[0] = (float) Math.cos(oriNorth);  //oriNorthをcosに射影したものを代入(x座標)
+		north[1] = (float) Math.sin(oriNorth);  //oriNorthをsinに射影したものを代入(y座標)
+		north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2]; //これ何してるのかわかんないけど多分gravity?を頑張っている
+		north = unit(north);    //正規化
+		//E軸 北から-90°してる
+		east[0] = (float) Math.cos(oriEast);//oriEastをcosに射影したものを代入(x座標)
+		east[1] = (float) Math.sin(oriEast);
+		east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
+		east = unit(east);  //正規化
+
+
+		//finCalData = finCalData + "\n" + time + "\n" + strTag; //デバッグ用
+
+		/*if ( countTagReadRssi<=2 || time-pastTime >= 100) {//別スキャンになった時 && 初スキャン,2回目スキャン
+			//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";　//デバッグ用
+			if (countTagReadRssi == 1) {//1回目のスキャン(空データなので何もしない)
+				//何もしない
+				//値を全てリセット
+				lastAccelTime = 0;
+				int i = 0;
+				for (i = 0; i < 3; i++) {
+					speed[i] = 0;
+					difference[i] = 0;
+				}
+			}
+			else if (countTagReadRssi >= 2) {//countTagが2以上でfinに値が入っている時
+				if (countTagReadRssi != 2) {//2以外の時の処理->countが2の時に初めてデータが取れるのでtempにそのまま書き込みたい&方向を正規化したいのでこっちに分岐をいれる
+					if (!finCalData.isEmpty() && !finSaveData.isEmpty()) {//finにデータが入っている時
+						//difference = unit(difference);//方向を正規化
+						//今までのデータをfindataにいれる
+						finCalData = finCalData + "\n" + time +"," +  tempData + "," + tempRSSI +"\n"+ "betu";
+						//finSaveData = finSaveData + "\n" + tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
+					} else {//finにデータが入っていない時-> finと足さずにいれる(改行されちゃうので)
+						//difference = unit(difference);//方向を正規化
+						finCalData =  tempData + "\n" + tempRSSI;
+						//finSaveData =  tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
+					}
+				}
+
+				//新しく書き込み
+				tempData = strTag;
+				tempRSSI = String.valueOf(rssi);
+
+			*//*else{
+				finCalData= tempData + "\n" + tempRSSI;
+				finSaveData = tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
+			}*//*
+			}
+
+			//方向リセット
+			lastAccelTime = 0;
+			int i = 0;
+			for (i = 0; i < 3; i++) {
+				speed[i] = 0;
+				difference[i] = 0;
+			}
+
+			//新しい方向の基準を設定
+			//N軸，E軸の設定
+			orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ 方位をラジアンに
+			float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ　方位を90°回転
+			float oriEast = orientationRad;                         //θ 方位を入れる
+			//N軸
+			north[0] = (float) Math.cos(oriNorth);  //oriNorthをcosに射影したものを代入(x座標)
+			north[1] = (float) Math.sin(oriNorth);  //oriNorthをsinに射影したものを代入(y座標)
+			north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2]; //これ何してるのかわかんないけど多分gravity?を頑張っている
+			north = unit(north);    //正規化
+			//E軸 北から-90°してる
+			east[0] = (float) Math.cos(oriEast);//oriEastをcosに射影したものを代入(x座標)
+			east[1] = (float) Math.sin(oriEast);
+			east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
+			east = unit(east);  //正規化
+
+			check=true;
+		}
+		//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";
+
+		else{//連続している時
+			//前のデータセットに付け足し
+			tempData=tempData+","+strTag;
+			tempRSSI=tempRSSI+","+String.valueOf(rssi);
+			//以下デバッグ用
+			//ShowToast(String.valueOf(tempDataList));
+			//finData = finData+"\n"+strTag+"\n"+rssi+"\n"+time +"\n";
+
+			//初期化
+			lastAccelTime = 0;
+			int i = 0;
+			for (i = 0; i < 3; i++) {
+				speed[i] = 0;
+				difference[i] = 0;
+			}
+
+			//新しい方向の基準を設定
+			//N軸，E軸の設定
+			orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ 方位をラジアンに
+			float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ　方位を90°回転
+			float oriEast = orientationRad;                         //θ 方位を入れる
+			//N軸
+			north[0] = (float) Math.cos(oriNorth);  //oriNorthをcosに射影したものを代入(x座標)
+			north[1] = (float) Math.sin(oriNorth);  //oriNorthをsinに射影したものを代入(y座標)
+			north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2]; //これ何してるのかわかんないけど多分gravity?を頑張っている
+			north = unit(north);    //正規化
+			//E軸 北から-90°してる
+			east[0] = (float) Math.cos(oriEast);//oriEastをcosに射影したものを代入(x座標)
+			east[1] = (float) Math.sin(oriEast);
+			east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
+			east = unit(east);  //正規化
+
+			check=true;
+		}
+		pastTime = time;*/
+
+
 		//listRefreshにデータを送る
 		ListRefresh(pcEpc,rssi,df_NOT_INVALID_RFM,time);
 	}
@@ -1339,8 +1573,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	}*/
 
 	//方向推定の時に必要な関数
-	private float[] unit(float[] vec){
-		//入力されたベクトルを正規化
+	private float[] unit(float[] vec){ //入力されたベクトルを正規化
 		float[] unitVec = new float[vec.length];
 		float scalar = (float)Math.sqrt(Math.pow(vec[0],2) + Math.pow(vec[1],2) + Math.pow(vec[2],2));
 		for(int i = 0; i < 3; i++){
@@ -1349,8 +1582,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		return  unitVec;
 	}
 
-	private float[] rad2deg(float[] vec){
-		//入力された値をradianからdegreeに変換
+	private float[] rad2deg(float[] vec){ //入力された値をradianからdegreeに変換する関数
 		int VEC_SIZE = vec.length;
 		float[] retvec = new float[VEC_SIZE];
 		for(int i = 0; i < VEC_SIZE; i++){

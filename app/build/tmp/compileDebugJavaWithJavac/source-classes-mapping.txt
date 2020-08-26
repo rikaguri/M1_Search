@@ -43,6 +43,7 @@ com/minireader/sdevice/rfid/MainActivity.java
  com.minireader.sdevice.rfid.MainActivity$16
  com.minireader.sdevice.rfid.MainActivity$17
  com.minireader.sdevice.rfid.MainActivity$18
+ com.minireader.sdevice.rfid.MainActivity$19
  com.minireader.sdevice.rfid.MainActivity$2
  com.minireader.sdevice.rfid.MainActivity$3
  com.minireader.sdevice.rfid.MainActivity$4

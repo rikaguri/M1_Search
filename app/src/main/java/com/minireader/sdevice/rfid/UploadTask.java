@@ -37,7 +37,7 @@ public class UploadTask extends AsyncTask<String,Void,String> {
 	@Override
 	protected String doInBackground(String... params) {
 		// 使用するサーバーのURLに合わせる
-		String urlSt = "http://192.168.10.102/test/makeGraph/get.py";
+		String urlSt = "http://192.168.10.102/test/makeGraph/testlog";
 
 		HttpURLConnection httpConn = null;
 		String result = null;

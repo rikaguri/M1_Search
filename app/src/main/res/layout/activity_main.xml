@@ -221,6 +221,14 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@drawable/nav_btn_text_colors_battery"
                 android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="UPload"
+                android:textColor="@color/segment_radio_text_colors" />
         </LinearLayout>
 
 
