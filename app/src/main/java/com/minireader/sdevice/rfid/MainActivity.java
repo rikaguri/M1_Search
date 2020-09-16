@@ -35,6 +35,7 @@ import android.content.SharedPreferences;
 import com.asreader.common.AsDeviceConst;
 import com.asreader.event.IOnAsDeviceRfidEvent;
 import com.asreader.event.IOnOtgEvent;
+import com.asreader.rfid.AsDeviceRfidFhLbtParam;
 import com.asreader.sdevice.AsDeviceLib;
 import com.asreader.sdevice.AsDeviceMngr;
 import com.asreader.sdevice.dongle.custom.*;
@@ -52,9 +53,9 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	private final int df_NOT_INVALID_RSSI = 10;
 	private final String df_NOT_INVALID_RFM = "nRFM";
 	private int encoding_type = EpcConverter.HEX_STRING;
-	private int max_tag = 4000;//maximum number of tags to read
-	private int max_time = 10;//maximum elapsed time to read tags(sec) 経過時間
-	private int repeat_cycle = 100;//how many times reader performs inventory round
+	private int max_tag = 0;//maximum number of tags to read
+	private int max_time = 0;//maximum elapsed time to read tags(sec) 経過時間
+	private int repeat_cycle = 1;//how many times reader performs inventory round
 
 
 	private ListView epclist;
@@ -97,7 +98,6 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 	private  UploadTask task2;
 	//String url=;//PHPがPOSTで受け取ったwordを入れて作成するHTMLページ
 
-
 	//方向推定用
 	final static float PI = (float)Math.PI;
 
@@ -126,6 +126,9 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 	private Button button;
 	boolean check = false;
+
+	//設定用変数
+	AsDeviceRfidFhLbtParam param;
 
 	public class TagData {
 		public int[] mData;
@@ -178,7 +181,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 					//各軸の加速度を2重積分
 					long dt = event.timestamp - lastAccelTime;    //dt(nanosec)
 					if (lastAccelTime > 0) {
-						//GNE軸に変換
+						//ENG軸に変換
 						gneAccel[0] = east[0] * accelValue[0] + east[1] * accelValue[1] + east[2] * accelValue[2];
 						gneAccel[1] = north[0] * accelValue[0] + north[1] * accelValue[1] + north[2] * accelValue[2];
 						gneAccel[2] = gravity[0] * accelValue[0] + gravity[1] * accelValue[1] + gravity[2] * accelValue[2];
@@ -208,6 +211,8 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				gravity = unit(gravity);    //正規化
 				break;
 
+
+			
 
 			default:
 				return;
@@ -340,70 +345,24 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		//upload button
 		btn_upload=(Button)findViewById(R.id.upload);
 		btn_upload.setOnClickListener(new View.OnClickListener() {
-			@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 			@Override
 			public void onClick(View v) {
-				createCSVData();//ここでcsvのデータ形式にする
+				//ここでcsvのデータ形式にする
+				createCSVData();
+				CSVcreator("calc.csv",finCalData);
+				CSVcreator("save.csv",finSaveData);
 
-				//ファイルの読み書きの話
-				File path = getExternalFilesDir(null);
-				String testfile ="calc.csv";
-				File file = new File(path, testfile);
-				if(file.exists()){
-					file.delete();
-					ShowToast("Delete");
-				}
-
-				try {
-					FileOutputStream outputStream = new FileOutputStream(file, true);
-					OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, UTF_8);
-					//outputStream.write(finData.getBytes());
-					//outputStream.close();
-					bw = new BufferedWriter(outputStreamWriter);
-					finCalData = finCalData+"\n";
-					bw.write(finCalData);
-					bw.flush();
-					bw.close();
-					ShowToast("STOP"+ finCalData);
-				}catch(Exception e){
-					e.printStackTrace();
-					ShowToast("NG"+ finCalData);
-				}
-
-				File path2 = getExternalFilesDir(null);
-				String testfile2 ="save.csv";
-				File file2 = new File(path2, testfile2);
-				if(file2.exists()){
-					file2.delete();
-					ShowToast("Delete");
-				}
-				try {
-					FileOutputStream outputStream2 = new FileOutputStream(file2, true);
-					OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(outputStream2, UTF_8);
-					//outputStream.write(finData.getBytes());
-					//outputStream.close();
-					BufferedWriter bw = new BufferedWriter(outputStreamWriter2);
-					finSaveData = finSaveData+"\n";
-					bw.write(finSaveData);
-					bw.flush();
-					bw.close();
-					ShowToast("STOP"+ finSaveData);
-				}catch(Exception e){
-					e.printStackTrace();
-					ShowToast("NG"+ finSaveData);
-				}
-
-
-				/*task = new UploadTask();
+				/* ここでUpload
+				task = new UploadTask();
 				task.setListener(createListener());
 				task.execute(finCalData);*/
 				task2 =new UploadTask();
 				task2.setListener(createListener());
 				task2.execute(finSaveData);
 
-
-				finCalData ="";
-				finSaveData="";
+				//初期化(できてない)
+				finCalData =null;
+				finSaveData=null;
 				countTagReadRssi = 0;
 			}
 		});
@@ -451,7 +410,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 			}
 		});
 
-
+		//setpower Button
 		setPower = (ToggleButton) findViewById(R.id.power_onoff);
 		setPower.setOnClickListener(new View.OnClickListener()
 		{
@@ -480,6 +439,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		oSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 
 		initial();
+
 
 		/* SDK , APP Info */
 		TextView txtTitle  = (TextView) findViewById(R.id.titlebar_text);
@@ -1388,6 +1348,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		east[1] = (float) Math.sin(oriEast);
 		east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
 		east = unit(east);  //正規化
+		//G軸の設定
 
 
 		//finCalData = finCalData + "\n" + time + "\n" + strTag; //デバッグ用
@@ -1598,6 +1559,33 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				ShowToast(result);
 			}
 		};
+	}
+
+	@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+	private void CSVcreator(String output, String data){
+		//ファイルの読み書きの話
+		File path = getExternalFilesDir(null);
+		File file = new File(path, output);
+		if(file.exists()){
+			file.delete();
+			ShowToast("Delete");
+		}
+
+		try {
+			FileOutputStream outputStream = new FileOutputStream(file, true);
+			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, UTF_8);
+			//outputStream.write(finData.getBytes());
+			//outputStream.close();
+			bw = new BufferedWriter(outputStreamWriter);
+			data = data+"\n";
+			bw.write(data);
+			bw.flush();
+			bw.close();
+			ShowToast("STOP"+ data);
+		}catch(Exception e){
+			e.printStackTrace();
+			ShowToast("NG"+ data);
+		}
 	}
 }
 
