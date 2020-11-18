@@ -30,6 +30,9 @@
 
 
     <uses-feature android:name="android.hardware.usb.host" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -143,6 +146,16 @@
 
         <activity
             android:name=".SettingOnOffActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensorPortrait"></activity>
+
+        <activity
+            android:name=".SearchActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensorPortrait"></activity>
+
+        <activity
+            android:name=".CalibrationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensorPortrait"></activity>
 

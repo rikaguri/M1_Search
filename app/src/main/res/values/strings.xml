@@ -32,4 +32,8 @@
 	<string name="unplugged">Unplugged</string>
     <string name="dist">dist</string>
     <string name="finishSearch">探し物発見</string>
+    <string name="back">Back</string>
+	<string name="button">Button</string>
+	<string name="textview">TextView</string>
+    <string name="finish">finish</string>
 </resources>

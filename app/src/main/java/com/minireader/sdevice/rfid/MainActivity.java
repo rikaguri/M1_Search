@@ -1,11 +1,13 @@
 package com.minireader.sdevice.rfid;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.sql.Timestamp;
-import java.util.ArrayList;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -23,14 +25,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 
 import com.asreader.common.AsDeviceConst;
 import com.asreader.event.IOnAsDeviceRfidEvent;
@@ -38,11 +32,19 @@ import com.asreader.event.IOnOtgEvent;
 import com.asreader.rfid.AsDeviceRfidFhLbtParam;
 import com.asreader.sdevice.AsDeviceLib;
 import com.asreader.sdevice.AsDeviceMngr;
-import com.asreader.sdevice.dongle.custom.*;
+import com.asreader.sdevice.dongle.custom.CellData;
+import com.asreader.sdevice.dongle.custom.CustomTagAdapter;
 import com.asreader.util.SensorTag;
 import com.asreader.util.Utils;
 import com.asreader.utility.EpcConverter;
 import com.asreader.utility.Logger;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import static java.lang.Math.abs;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -79,7 +81,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 	ToggleButton setPower;
 
-	Button option, clearScreen, stopAutoRead, btn_ext_read, btn_ext_rfm, btn_battery,btn_upload;
+	Button option, clearScreen, stopAutoRead, btn_ext_read, btn_ext_rfm, btn_battery,btn_upload,change_mode;
 
 	//タグのデータをcsvに格納するためのデータ
 	public ArrayList<MainActivity.MyTagData> myTagDataArrayList = new ArrayList<>();
@@ -253,7 +255,6 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		//Log.d("o","ルートディレクトリ？"+);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
@@ -345,6 +346,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		//upload button
 		btn_upload=(Button)findViewById(R.id.upload);
 		btn_upload.setOnClickListener(new View.OnClickListener() {
+			@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 			@Override
 			public void onClick(View v) {
 				//ここでcsvのデータ形式にする
@@ -361,8 +363,8 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 				task2.execute(finSaveData);
 
 				//初期化(できてない)
-				finCalData =null;
-				finSaveData=null;
+				finCalData ="";
+				finSaveData="";
 				countTagReadRssi = 0;
 			}
 		});
@@ -379,6 +381,17 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 			}
 		});
 		clearScreen.setEnabled(false);
+
+		// Change Mode button
+		change_mode =(Button) findViewById(R.id.change_mode);
+		change_mode.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//別の画面に移行
+				startActivity(new Intent(MainActivity.this, CalibrationActivity.class));
+				finish();
+			}
+		});
 
 		// More Button
 		option = (Button) findViewById(R.id.option);
@@ -1114,11 +1127,11 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		//以下取ってきたものを全てcsv形式に直すもの
 		for(index=0;index<finDataList.size();index++){
 			if(finDataList.get(index).time-pastTime<100) {
-				finSaveData = finSaveData + "\n" +","+ String.valueOf(finDataList.get(index).time) + "," + finDataList.get(index).name + "," + finDataList.get(index).rssi + "," + finDataList.get(index).x_vec + "," + finDataList.get(index).y_vec + "," + finDataList.get(index).z_vec;
+				finSaveData = finSaveData + "\n" +","+ finDataList.get(index).time + "," + finDataList.get(index).name + "," + finDataList.get(index).rssi + "," + finDataList.get(index).x_vec + "," + finDataList.get(index).y_vec + "," + finDataList.get(index).z_vec;
 				pastTime=finDataList.get(index).time;
 			}
 			else{
-				finSaveData= finSaveData+ "\n"+"Betu"+","+ String.valueOf(finDataList.get(index).time)+","+finDataList.get(index).name+","+finDataList.get(index).rssi+","+finDataList.get(index).x_vec+","+finDataList.get(index).y_vec+","+finDataList.get(index).z_vec;
+				finSaveData= finSaveData+ "\n"+"Betu"+","+ finDataList.get(index).time +","+finDataList.get(index).name+","+finDataList.get(index).rssi+","+finDataList.get(index).x_vec+","+finDataList.get(index).y_vec+","+finDataList.get(index).z_vec;
 				pastTime=finDataList.get(index).time;
 			}
 		}
@@ -1298,8 +1311,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 
 	//rssiがついたタグが読み取れた時発生するイベント
 	//別スキャンの時だけ計測・記録を行う
-	@Override
-	public void onTagWithRssiReceived(int[] pcEpc, int rssi) {
+	@Override public void onTagWithRssiReceived(int[] pcEpc, int rssi) {
 		// TODO Auto-generated method stub
 
 		countTagReadRssi++;
@@ -1317,7 +1329,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		mydata.time= time;
 		mydata.rssi= rssi;
 		mydata.name= strTag;
-		difference=unit(difference);//正規化
+		//difference=unit(difference);//正規化
 		mydata.x_vec= String.valueOf(difference[0]);
 		mydata.y_vec= String.valueOf(difference[1]);
 		mydata.z_vec= String.valueOf(difference[2]);
@@ -1349,110 +1361,7 @@ public class MainActivity extends Activity implements IOnAsDeviceRfidEvent,IOnOt
 		east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
 		east = unit(east);  //正規化
 		//G軸の設定
-
-
-		//finCalData = finCalData + "\n" + time + "\n" + strTag; //デバッグ用
-
-		/*if ( countTagReadRssi<=2 || time-pastTime >= 100) {//別スキャンになった時 && 初スキャン,2回目スキャン
-			//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";　//デバッグ用
-			if (countTagReadRssi == 1) {//1回目のスキャン(空データなので何もしない)
-				//何もしない
-				//値を全てリセット
-				lastAccelTime = 0;
-				int i = 0;
-				for (i = 0; i < 3; i++) {
-					speed[i] = 0;
-					difference[i] = 0;
-				}
-			}
-			else if (countTagReadRssi >= 2) {//countTagが2以上でfinに値が入っている時
-				if (countTagReadRssi != 2) {//2以外の時の処理->countが2の時に初めてデータが取れるのでtempにそのまま書き込みたい&方向を正規化したいのでこっちに分岐をいれる
-					if (!finCalData.isEmpty() && !finSaveData.isEmpty()) {//finにデータが入っている時
-						//difference = unit(difference);//方向を正規化
-						//今までのデータをfindataにいれる
-						finCalData = finCalData + "\n" + time +"," +  tempData + "," + tempRSSI +"\n"+ "betu";
-						//finSaveData = finSaveData + "\n" + tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
-					} else {//finにデータが入っていない時-> finと足さずにいれる(改行されちゃうので)
-						//difference = unit(difference);//方向を正規化
-						finCalData =  tempData + "\n" + tempRSSI;
-						//finSaveData =  tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
-					}
-				}
-
-				//新しく書き込み
-				tempData = strTag;
-				tempRSSI = String.valueOf(rssi);
-
-			*//*else{
-				finCalData= tempData + "\n" + tempRSSI;
-				finSaveData = tempData + "\n" + String.valueOf(difference[0]) + "," + String.valueOf(difference[1]) + "," + String.valueOf(difference[2]);
-			}*//*
-			}
-
-			//方向リセット
-			lastAccelTime = 0;
-			int i = 0;
-			for (i = 0; i < 3; i++) {
-				speed[i] = 0;
-				difference[i] = 0;
-			}
-
-			//新しい方向の基準を設定
-			//N軸，E軸の設定
-			orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ 方位をラジアンに
-			float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ　方位を90°回転
-			float oriEast = orientationRad;                         //θ 方位を入れる
-			//N軸
-			north[0] = (float) Math.cos(oriNorth);  //oriNorthをcosに射影したものを代入(x座標)
-			north[1] = (float) Math.sin(oriNorth);  //oriNorthをsinに射影したものを代入(y座標)
-			north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2]; //これ何してるのかわかんないけど多分gravity?を頑張っている
-			north = unit(north);    //正規化
-			//E軸 北から-90°してる
-			east[0] = (float) Math.cos(oriEast);//oriEastをcosに射影したものを代入(x座標)
-			east[1] = (float) Math.sin(oriEast);
-			east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
-			east = unit(east);  //正規化
-
-			check=true;
-		}
-		//finData = finData + "ScanStart" + "\n" + strTag + "\n" + rssi + "\n" + time + "\n";
-
-		else{//連続している時
-			//前のデータセットに付け足し
-			tempData=tempData+","+strTag;
-			tempRSSI=tempRSSI+","+String.valueOf(rssi);
-			//以下デバッグ用
-			//ShowToast(String.valueOf(tempDataList));
-			//finData = finData+"\n"+strTag+"\n"+rssi+"\n"+time +"\n";
-
-			//初期化
-			lastAccelTime = 0;
-			int i = 0;
-			for (i = 0; i < 3; i++) {
-				speed[i] = 0;
-				difference[i] = 0;
-			}
-
-			//新しい方向の基準を設定
-			//N軸，E軸の設定
-			orientationRad = (float) Math.toRadians(oriantation);    //degree[°]をradianへ 方位をラジアンに
-			float oriNorth = (float) Math.PI / 2 + orientationRad;   //π/2+θ　方位を90°回転
-			float oriEast = orientationRad;                         //θ 方位を入れる
-			//N軸
-			north[0] = (float) Math.cos(oriNorth);  //oriNorthをcosに射影したものを代入(x座標)
-			north[1] = (float) Math.sin(oriNorth);  //oriNorthをsinに射影したものを代入(y座標)
-			north[2] = -1.0f * (north[0] * gravity[0] + north[1] * gravity[1]) / gravity[2]; //これ何してるのかわかんないけど多分gravity?を頑張っている
-			north = unit(north);    //正規化
-			//E軸 北から-90°してる
-			east[0] = (float) Math.cos(oriEast);//oriEastをcosに射影したものを代入(x座標)
-			east[1] = (float) Math.sin(oriEast);
-			east[2] = -1.0f * (east[0] * gravity[0] + east[1] * gravity[1]) / gravity[2];
-			east = unit(east);  //正規化
-
-			check=true;
-		}
-		pastTime = time;*/
-
+//		gravity[0] = ;
 
 		//listRefreshにデータを送る
 		ListRefresh(pcEpc,rssi,df_NOT_INVALID_RFM,time);

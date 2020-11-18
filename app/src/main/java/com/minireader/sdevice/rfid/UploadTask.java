@@ -87,7 +87,7 @@ public class UploadTask extends AsyncTask<String,Void,String> {
 				result="HTTP_OK";
 			}
 			else{
-				result="status="+String.valueOf(status);
+				result="status="+ status;
 			}
 
 		} catch (IOException e) {

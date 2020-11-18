@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="200dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/dist"
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:text="@string/dist"
+        android:textSize="100sp" />
+
+    <Button
+        android:id="@+id/find"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finish" />
+    <!--    <CheckBox android:id="@+id/chk_no_repeat"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--        android:text="@string/chk_no_repeat"/>-->
+    <!--    <CheckBox android:id="@+id/chk_date_time"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--        android:text="@string/chk_date_time"/>-->
+    <!--    <CheckBox android:id="@+id/chk_radio_power"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--        android:text="@string/chk_radio_power"/>-->
+    <!--    <LinearLayout android:id="@+id/linearLayout3"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:gravity="bottom">-->
+    <!--        <Button android:id="@+id/btn_opt_back"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:drawableLeft="@drawable/ic_menu_back"-->
+    <!--            android:drawableStart="@drawable/ic_menu_back"-->
+    <!--            android:text="@string/btn_back"/>-->
+    <!--        <TextView android:id="@+id/textView2"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"/>-->
+    <!--        <Button android:id="@+id/btn_opt_forward"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:drawableEnd="@drawable/ic_menu_forward"-->
+    <!--            android:drawableRight="@drawable/ic_menu_forward"-->
+    <!--            android:text="@string/btn_forward"/>-->
+    <!--    </LinearLayout>-->
+</LinearLayout>

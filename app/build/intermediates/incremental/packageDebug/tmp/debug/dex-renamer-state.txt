@@ -1,4 +1,4 @@
-#Wed Aug 26 17:07:06 JST 2020
+#Sat Sep 26 09:11:06 JST 2020
 base.0=/Users/erika/Seminer/RFID/android-asreader/191223_A3XD(APP0.0.8_SDK1.0.7.4)/APP/A3XD(RFM)/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -31,30 +31,12 @@ com/minireader/sdevice/rfid/ListViewDialog.java
  com.minireader.sdevice.rfid.ListViewDialog$ListViewAdapter
  com.minireader.sdevice.rfid.ListViewDialog$ListViewAdapter$ViewHolder
  com.minireader.sdevice.rfid.ListViewDialog$ListViewDialogSelectListener
-com/minireader/sdevice/rfid/MainActivity.java
- com.minireader.sdevice.rfid.MainActivity
- com.minireader.sdevice.rfid.MainActivity$1
- com.minireader.sdevice.rfid.MainActivity$10
- com.minireader.sdevice.rfid.MainActivity$11
- com.minireader.sdevice.rfid.MainActivity$12
- com.minireader.sdevice.rfid.MainActivity$13
- com.minireader.sdevice.rfid.MainActivity$14
- com.minireader.sdevice.rfid.MainActivity$15
- com.minireader.sdevice.rfid.MainActivity$16
- com.minireader.sdevice.rfid.MainActivity$17
- com.minireader.sdevice.rfid.MainActivity$18
- com.minireader.sdevice.rfid.MainActivity$19
- com.minireader.sdevice.rfid.MainActivity$2
- com.minireader.sdevice.rfid.MainActivity$3
- com.minireader.sdevice.rfid.MainActivity$4
- com.minireader.sdevice.rfid.MainActivity$5
- com.minireader.sdevice.rfid.MainActivity$6
- com.minireader.sdevice.rfid.MainActivity$7
- com.minireader.sdevice.rfid.MainActivity$8
- com.minireader.sdevice.rfid.MainActivity$9
- com.minireader.sdevice.rfid.MainActivity$MyTagData
- com.minireader.sdevice.rfid.MainActivity$ScreenOnReceiver
- com.minireader.sdevice.rfid.MainActivity$TagData
+com/minireader/sdevice/rfid/KillActivity.java
+ com.minireader.sdevice.rfid.KillActivity
+ com.minireader.sdevice.rfid.KillActivity$1
+ com.minireader.sdevice.rfid.KillActivity$2
+ com.minireader.sdevice.rfid.KillActivity$3
+ com.minireader.sdevice.rfid.KillActivity$4
 com/minireader/sdevice/rfid/LockActivity.java
  com.minireader.sdevice.rfid.LockActivity
  com.minireader.sdevice.rfid.LockActivity$1
@@ -75,6 +57,8 @@ com/minireader/sdevice/rfid/AntiModeActivity.java
  com.minireader.sdevice.rfid.AntiModeActivity$6
  com.minireader.sdevice.rfid.AntiModeActivity$7
  com.minireader.sdevice.rfid.AntiModeActivity$8
+com/minireader/sdevice/rfid/CsvReader.java
+ com.minireader.sdevice.rfid.CsvReader
 com/asreader/sdevice/dongle/custom/CustomTagAdapter.java
  com.asreader.sdevice.dongle.custom.CustomTagAdapter
 com/minireader/sdevice/rfid/RegionActivity.java
@@ -101,8 +85,6 @@ com/minireader/sdevice/rfid/ChannelActivity.java
 com/minireader/sdevice/rfid/UploadTask.java
  com.minireader.sdevice.rfid.UploadTask
  com.minireader.sdevice.rfid.UploadTask$Listener
-com/minireader/sdevice/rfid/SearchFragment.java
- com.minireader.sdevice.rfid.SearchFragment
 com/minireader/sdevice/rfid/InfoActivity.java
  com.minireader.sdevice.rfid.InfoActivity
  com.minireader.sdevice.rfid.InfoActivity$1
@@ -164,11 +146,19 @@ com/minireader/sdevice/rfid/HoppingView.java
  com.minireader.sdevice.rfid.HoppingView$7
  com.minireader.sdevice.rfid.HoppingView$8
  com.minireader.sdevice.rfid.HoppingView$9
+com/minireader/sdevice/rfid/SearchActivity.java
+ com.minireader.sdevice.rfid.SearchActivity
+ com.minireader.sdevice.rfid.SearchActivity$1
+ com.minireader.sdevice.rfid.SearchActivity$2
+ com.minireader.sdevice.rfid.SearchActivity$MyTagData
 com/minireader/sdevice/rfid/EncodingTypeActivity.java
  com.minireader.sdevice.rfid.EncodingTypeActivity
  com.minireader.sdevice.rfid.EncodingTypeActivity$1
  com.minireader.sdevice.rfid.EncodingTypeActivity$2
  com.minireader.sdevice.rfid.EncodingTypeActivity$3
+com/asreader/component/ListData.java
+ com.asreader.component.ListData
+ com.asreader.component.ListData$1
 com/minireader/sdevice/rfid/ReadWriteActivity.java
  com.minireader.sdevice.rfid.ReadWriteActivity
  com.minireader.sdevice.rfid.ReadWriteActivity$1
@@ -178,16 +168,36 @@ com/minireader/sdevice/rfid/ReadWriteActivity.java
  com.minireader.sdevice.rfid.ReadWriteActivity$5
  com.minireader.sdevice.rfid.ReadWriteActivity$6
  com.minireader.sdevice.rfid.ReadWriteActivity$7
-com/asreader/component/ListData.java
- com.asreader.component.ListData
- com.asreader.component.ListData$1
 com/asreader/sdevice/dongle/custom/CustomSettingAdapter.java
  com.asreader.sdevice.dongle.custom.CustomSettingAdapter
 com/minireader/sdevice/rfid/BuildConfig.java
  com.minireader.sdevice.rfid.BuildConfig
-com/minireader/sdevice/rfid/KillActivity.java
- com.minireader.sdevice.rfid.KillActivity
- com.minireader.sdevice.rfid.KillActivity$1
- com.minireader.sdevice.rfid.KillActivity$2
- com.minireader.sdevice.rfid.KillActivity$3
- com.minireader.sdevice.rfid.KillActivity$4
+com/minireader/sdevice/rfid/CalibrationActivity.java
+ com.minireader.sdevice.rfid.CalibrationActivity
+ com.minireader.sdevice.rfid.CalibrationActivity$1
+ com.minireader.sdevice.rfid.CalibrationActivity$2
+com/minireader/sdevice/rfid/MainActivity.java
+ com.minireader.sdevice.rfid.MainActivity
+ com.minireader.sdevice.rfid.MainActivity$1
+ com.minireader.sdevice.rfid.MainActivity$10
+ com.minireader.sdevice.rfid.MainActivity$11
+ com.minireader.sdevice.rfid.MainActivity$12
+ com.minireader.sdevice.rfid.MainActivity$13
+ com.minireader.sdevice.rfid.MainActivity$14
+ com.minireader.sdevice.rfid.MainActivity$15
+ com.minireader.sdevice.rfid.MainActivity$16
+ com.minireader.sdevice.rfid.MainActivity$17
+ com.minireader.sdevice.rfid.MainActivity$18
+ com.minireader.sdevice.rfid.MainActivity$19
+ com.minireader.sdevice.rfid.MainActivity$2
+ com.minireader.sdevice.rfid.MainActivity$20
+ com.minireader.sdevice.rfid.MainActivity$3
+ com.minireader.sdevice.rfid.MainActivity$4
+ com.minireader.sdevice.rfid.MainActivity$5
+ com.minireader.sdevice.rfid.MainActivity$6
+ com.minireader.sdevice.rfid.MainActivity$7
+ com.minireader.sdevice.rfid.MainActivity$8
+ com.minireader.sdevice.rfid.MainActivity$9
+ com.minireader.sdevice.rfid.MainActivity$MyTagData
+ com.minireader.sdevice.rfid.MainActivity$ScreenOnReceiver
+ com.minireader.sdevice.rfid.MainActivity$TagData
